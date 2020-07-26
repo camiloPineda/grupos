@@ -1,0 +1,558 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: GilroyBold;
+    src: url('../fonts/gilroybold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyExtraBold;
+    src: url('../fonts/gilroyextrabold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyHeavy;
+    src: url('../fonts/gilroyheavy.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyLigth;
+    src: url('../fonts/gilroylight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyMedium;
+    src: url('../fonts/gilroymedium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyRegular;
+    src: url('../fonts/gilroyregular.ttf') format('truetype');
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background: #f2f2f2;
+    color: #6101d1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.Container {
+    width: 100%;
+    margin: auto;
+}
+
+.modal-header {
+    background-color: #6101d1;
+    color: white;
+}
+
+.modal-content {
+    width: 70%;
+    margin-left: 17%;
+}
+
+.container-fluid {
+    width: 100%
+}
+
+#modalRegistrocontent {
+    width: 80%;
+    margin-left: 13%;
+}
+
+.fa {
+    position: relative;
+    top: 2px;
+    font-size: 30px !important;
+    left: 10px;
+}
+
+.Containerlogo {
+    float: left;
+    margin: 1.4% 2.4%;
+}
+
+.Containerlogo_img img {
+    width: 25px;
+}
+
+.imgcarousel {
+    width: 100%;
+}
+
+.socialheader {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    z-index: 90;
+}
+
+    .socialheader button {
+        display: block;
+        color: #000;
+        padding-bottom: 10px;
+        font-size: 0;
+        text-decoration: none;
+        border: 0px;
+        background-color: #fff;
+        cursor: pointer;
+        transform: translateX(-100%);
+        outline: none;
+    }
+
+.lista_redes {
+    position: relative;
+    width: 28px;
+    top: 0px;
+    padding-bottom: 15px;
+}
+
+.facebookfooter {
+    position: relative;
+    width: 10px;
+    top: 14px;
+    padding-bottom: 20px;
+}
+
+.instagram {
+    position: relative;
+    width: 17px;
+    top: 14px;
+    padding-bottom: 20px;
+}
+
+.linkedin {
+    position: relative;
+    width: 17px;
+    top: 14px;
+    padding-bottom: 20px;
+}
+
+header .Container {
+    display: table;
+}
+
+section {
+    width: 100%;
+    bottom: 25px;
+}
+
+main {
+    background: #f5f5f5;
+}
+
+.franquicias {
+    font-family: GilroyBold;
+    font-size: 15px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+    .franquicias #uno {
+        font-family: GilroyBold;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .franquicias #dos {
+        font-family: GilroyBold;
+        font-size: 15px;
+        text-align: center;
+    }
+
+#pagos {
+    font-family: GilroyBold;
+    width: 100%;
+    height: 40hv;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+    #pagos img {
+        align: center;
+        width: 40px;
+        height: 40px;
+    }
+
+.footer {
+    width: 100%;
+    display: block;
+    padding: 5px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: #4e008e;
+}
+
+.imgfooter img {
+    width: 120px;
+    padding: 5px;
+}
+
+.imgfooter {
+    justify-content: center;
+    display: flex;
+}
+
+.copy p {
+    font-family: GilroyLigth;
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
+    text-align: left;
+    line-height: 20px;
+}
+
+.copy a {
+    color: #fff;
+}
+
+.contacto {
+    display: flex;
+    justify-content: center;
+}
+
+    .contacto h6 {
+        font-family: GilroyBold;
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .contacto img {
+        width: 15px;
+    }
+
+.siguenos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+    .siguenos h6 {
+        font-family: GilroyLigth;
+        color: #fff;
+        padding: 0px;
+    }
+
+.sociales {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    .sociales a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        margin: 4px;
+    }
+
+
+header nav {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.menu_bar {
+    display: none;
+}
+
+header nav ul {
+    overflow: hidden;
+    list-style: none;
+}
+
+    header nav ul li {
+        float: left;
+    }
+
+        header nav ul li a {
+            color: #6101d1;
+            padding: 20px;
+            display: block;
+            text-decoration: none;
+        }
+
+        header nav ul li span {
+            margin-right: 10px;
+        }
+
+        header nav ul li a:hover {
+        }
+
+section {
+    padding: 20px;
+}
+
+.Line-12 {
+    width: 100%;
+    height: 1px;
+    opacity: 1.2;
+    background-color: #dddddd;
+    margin: 5px auto;
+}
+
+p {
+    font-family: GilroyRegular;
+}
+
+.terminos {
+    position: absolute;
+    left: 34px;
+    font-size: 15px;
+}
+
+#terminos {
+    position: relative;
+    top: 3px;
+}
+
+.titleTerminos {
+    font-size: 20px;
+    font-family: GilroyExtraBold;
+}
+
+.contentTerminos {
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.error {
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    header nav {
+        width: 100%;
+        height: 100%;
+        left: -100%;
+        margin: 0;
+        position: fixed;
+    }
+
+        header nav ul li {
+            display: block;
+            float: none;
+            border-bottom: 1px solid rgba(255,255,255, .3);
+        }
+
+    .menu_bar {
+        display: block;
+        width: 100%;
+        position: relative;
+        right: 15px;
+        top: -3px;
+    }
+
+        .menu_bar .bt-menu {
+            display: block;
+            padding: 20px;
+            color: #6101d1;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 25px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .menu_bar i {
+            float: right;
+            font-size: 40px;
+            color: #6101d1;
+            z-index: 50;
+        }
+
+    .contactos ul {
+        background-color: white;
+        position: relative;
+        top: 43%;
+        width: 100%;
+    }
+}
+
+@media (min-width:1025px) {
+    header {
+        position: fixed;
+        z-index: 100;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        width: 80px;
+        height: 100vh;
+        padding: 25px 0px;
+        text-align: center;
+        overflow: hidden;
+        border: 0px;
+        outline: none;
+        background: #fff;
+    }
+
+    #boton_iniciosesion {
+        font-size: 11px;
+        background-color: #6101d1;
+        border-radius: 10px;
+        padding: 7px 3px 8px;
+        color: white;
+    }
+
+    .Container {
+        width: 1024px;
+    }
+
+    .Containerlogo {
+        z-index: 90;
+        position: relative;
+    }
+
+    .Containerlogo_img img {
+        width: 25px;
+    }
+
+
+    .socialheader button {
+        display: block;
+        color: #acacad;
+        padding-bottom: 10px;
+        font-size: 23px;
+        text-decoration: none;
+        border: 0px;
+        background-color: #fff;
+        cursor: pointer;
+        transform: translateX(0%);
+    }
+
+    .cuotas {
+        width: 94%;
+        display: flex;
+        margin-left: 6%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .franquicias {
+        width: 25%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        text-align: center;
+    }
+
+        .franquicias #uno {
+            font-family: GilroyBold;
+            font-size: 18px;
+            text-align: right;
+        }
+
+        .franquicias #dos {
+            font-family: GilroyBold;
+            font-size: 18px;
+            text-align: left;
+        }
+
+    #pagos {
+        width: 50%;
+        height: 40hv;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+        #pagos img {
+            align: center;
+            width: 45px;
+            height: 45px;
+        }
+
+    .footer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background: #4e008e;
+    }
+
+    .imgfooter img {
+        width: 120px;
+    }
+
+    .imgfooter {
+        justify-content: center;
+        display: flex;
+    }
+
+    .copy p {
+        font-family: GilroyLigth;
+        font-size: 11px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .copy a {
+        color: #fff;
+    }
+
+    .contacto {
+        display: flex;
+        justify-content: center;
+    }
+
+        .contacto h6 {
+            font-family: GilroyBold;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .contacto img {
+            width: 15px;
+            margin-top: 0px;
+        }
+
+    .siguenos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+        .siguenos h6 {
+            font-family: GilroyLigth;
+            color: #fff;
+            padding: 0px;
+        }
+
+    .sociales {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+        .sociales a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 4px;
+        }
+
+    .contactos {
+        display: none;
+    }
+}
+
+/* 
+##Device = Desktops
+##Screen = 1281px to higher resolution desktops
+*/
+

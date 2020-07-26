@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GruposModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Agency">
+    <Key>
+      <PropertyRef Name="agencyId" />
+    </Key>
+    <Property Name="agencyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="documentType" Type="varchar" MaxLength="100" />
+    <Property Name="agencyName" Type="varchar" MaxLength="300" />
+    <Property Name="contactType" Type="varchar" MaxLength="100" />
+    <Property Name="contactName" Type="varchar" MaxLength="300" />
+    <Property Name="cityName" Type="varchar" MaxLength="300" />
+    <Property Name="phoneNumber" Type="varchar" MaxLength="100" />
+    <Property Name="emailAddress" Type="varchar" MaxLength="300" />
+    <Property Name="terminos" Type="bit" />
+    <Property Name="userName" Type="varchar" MaxLength="100" />
+    <Property Name="password" Type="varchar" MaxLength="100" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="Id_City" />
+    </Key>
+    <Property Name="Id_City" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City_Code" Type="varchar" MaxLength="30" />
+    <Property Name="City_Name" Type="varchar" MaxLength="60" />
+    <Property Name="City_Status" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="GruposModelStoreContainer">
+    <EntitySet Name="Agency" EntityType="Self.Agency" Schema="grupos1_adminDb" store:Type="Tables" />
+    <EntitySet Name="Cities" EntityType="Self.Cities" Schema="grupos1_adminDb" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

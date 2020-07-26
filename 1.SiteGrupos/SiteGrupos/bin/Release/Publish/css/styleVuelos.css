@@ -1,0 +1,740 @@
+﻿﻿body {
+    background-color: #F5F5F5 !important;
+}
+
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url('../fonts/Poppins-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyExtraBold;
+    src: url('../fonts/gilroyextrabold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyHeavy;
+    src: url('../fonts/gilroyheavy.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyLigth;
+    src: url('../fonts/gilroylight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyMedium;
+    src: url('../fonts/gilroymedium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyRegular;
+    src: url('../fonts/gilroyregular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'gilroybold';
+    src: url('../fonts/gilroybold.ttf') format('truetype');
+}
+
+header {
+    width: 100%;
+    height: 158px;
+    background: #fff;
+    border-bottom: 1px solid #6101d1;
+}
+
+.terminos {
+    position: absolute;
+    left: 34px;
+    font-size: 15px;
+}
+
+#terminos {
+    position: relative;
+    top: 3px;
+}
+
+.titleTerminos {
+    font-size: 20px;
+    font-family: GilroyExtraBold;
+}
+
+.contentTerminos {
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.modal-header {
+    background-color: #6101d1;
+    color: white;
+}
+
+h1 {
+    color: #500778;
+}
+
+.Containerlogo_img {
+    position: relative;
+    top: 43px;
+    left: 40px;
+}
+
+    .Containerlogo_img img {
+        width: 239px;
+    }
+
+header nav {
+    width: 100%;
+    left: -100%;
+    margin: 0;
+    position: fixed;
+    top: 30%;
+}
+
+    header nav ul li {
+        display: block;
+        float: none;
+        border-bottom: 1px solid rgba(255,255,255, .3);
+    }
+
+.menu_bar {
+    display: block;
+    width: 100%;
+    position: absolute;
+    right: 14px;
+    top: 70px;
+}
+
+    .menu_bar .bt-menu {
+        display: block;
+        padding: 20px;
+        color: #6101d1;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 25px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .menu_bar i {
+        float: right;
+        font-size: 50px;
+        color: #6101d1;
+        z-index: 50;
+    }
+
+.contactos ul {
+    background-color: white;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+.menu_bar {
+    display: none;
+}
+
+header nav ul {
+    overflow: hidden;
+    list-style: none;
+}
+
+    header nav ul li {
+        float: left;
+        width: 100%;
+    }
+
+        header nav ul li a {
+            color: #6101d1;
+            padding: 20px;
+            display: block;
+            text-decoration: none;
+        }
+
+        header nav ul li span {
+            margin-right: 10px;
+        }
+
+        header nav ul li a:hover {
+        }
+
+.salir {
+    float: right;
+    position: relative;
+    right: 10px;
+    text-align: right;
+}
+
+.exit {
+    font-size: 25px !important;
+    position: relative;
+    top: 4px;
+    color: white;
+}
+
+.userAut {
+    position: relative;
+    top: 10px;
+    text-align: right;
+    font-family: GilroyLigth;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+}
+
+.submenu {
+    background-color: #003767;
+    color: white;
+    height: 40px;
+}
+
+.cerrar {
+    position: relative;
+    top: 5px;
+    color: white;
+}
+
+.redes {
+    background: rgba(219, 194, 255, 0.2);
+    height: 35px;
+}
+
+.imgRedes {
+    width: 15px;
+}
+
+.imgRedesFace {
+    width: 8px;
+}
+
+.btn_redes {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.redes ul {
+    list-style: none;
+    text-align: right;
+    position: relative;
+    top: 4px;
+}
+
+.redes li {
+    display: inline;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.contactoTel {
+    text-align: right;
+    position: relative;
+    right: 10px;
+    font-size: 30px;
+    top: -13px;
+    color: #6101d1;
+    font-family: 'gilroybold';
+}
+
+.botonesmenu {
+    border-radius: 100px;
+    width: 140px;
+    height: 140px;
+    background: white;
+    border: 2px solid #003767;
+    outline: none !important;
+}
+
+    .botonesmenu:hover {
+        background-color: white; /* Green */
+        color: white;
+        border: 2px solid black;
+        border: 2px solid #003767;
+    }
+
+
+.imgmenu {
+    font-size: 70px !important;
+    color: black;
+    position: relative;
+    top: 5px;
+    right: 2px;
+}
+
+.imgmenubox {
+    font-size: 70px !important;
+    color: black;
+    position: relative;
+    top: 5px;
+    right: 0px;
+}
+
+span {
+    font-family: GilroyExtraBold;
+    color: #6101d1;
+    font-weight: 600;
+}
+
+.ingresar {
+    background: #6101d1;
+    color: white;
+    padding: 0px 10px 2px;
+    font-family: GilroyBold;
+}
+
+.listaLegal ul {
+    list-style: none;
+}
+
+.listaLegal a {
+    color: white;
+    font-size: 11px;
+    font-family: GilroyLigth;
+}
+
+.listaLegal p {
+    color: white;
+    font-size: 11px;
+    font-family: GilroyLigth;
+    margin: 0;
+}
+
+.infofooter span {
+    font-size: 12px;
+    font-family: GilroyLigth;
+    color: white;
+}
+
+.listaLegal .cajon2 {
+    margin-left: 90px;
+}
+
+.contacto ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contacto span {
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+}
+
+.contacto li {
+    display: inline;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+
+.auricular {
+    position: relative;
+    width: 25px;
+    top: 9px;
+    padding-bottom: 20px;
+}
+
+.whatsapp {
+    position: relative;
+    width: 25px;
+    top: 9px;
+    padding-bottom: 20px;
+}
+
+.facebookfooter {
+    position: relative;
+    width: 14px;
+    top: 9px;
+    padding-bottom: 20px;
+}
+
+.instagram {
+    position: relative;
+    width: 25px;
+    top: 9px;
+    padding-bottom: 20px;
+}
+
+.linkedin {
+    position: relative;
+    width: 25px;
+    top: 9px;
+    padding-bottom: 20px;
+}
+
+@keyframes cambio {
+    0% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+}
+
+.shrink:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #4e008e;
+    position: absolute;
+    bottom: auto;
+}
+
+.imgfooter {
+    justify-content: center;
+    display: flex;
+    font-family: GilroyLigth;
+}
+
+.copy p {
+    font-family: GilroyLigth;
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.copy a {
+    color: #fff;
+}
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.siguenos span {
+    font-size: 11px;
+    color: white;
+    font-family: GilroyLigth;
+    font-weight: 100 !important;
+}
+
+
+.sociales {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+}
+
+    .sociales a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        margin: 4px;
+    }
+
+.contactos {
+    display: none;
+}
+
+.iconaur {
+    width: 0px;
+    transition: all 300ms;
+}
+
+.container-icons:hover .iconaur {
+    transform: rotate(360deg);
+}
+
+.row-icon {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    transition: all 300ms;
+    opacity: 1;
+    padding: 5px;
+}
+
+.container-icons:hover .row-icon {
+    opacity: 1;
+}
+
+.row-icon h4 {
+    font-family: GilroyBold;
+    transform: translate(-10px, 4px);
+    background: rgba(0,0,0,0.6);
+    width: 227px;
+    height: 27px;
+    padding: 2px 2px 2px 2px;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.row-icon img {
+    width: 0px;
+}
+
+.icon1 {
+    transform: translate(-100px, 40px) scale(0);
+}
+
+.icon2 {
+    transform: translate(-0px, 90px) scale(0);
+}
+
+
+
+.container-icons:hover .icon1 {
+    transform: translate(-223px, 60px) scale(1);
+}
+
+.container-icons:hover .icon2 {
+    transform: translate(-223px, 110px) scale(1);
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .contactos {
+        display: none;
+    }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .contactos {
+        display: none;
+    }
+
+    footer {
+        position: absolute;
+        bottom: auto;
+    }
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .menu_bar {
+        display: block;
+    }
+
+    .contactos {
+        display: block;
+        z-index: 10;
+    }
+
+    .salir {
+        display: none;
+    }
+
+    .contactoTel {
+        display: none;
+    }
+
+    footer {
+        position: absolute;
+        bottom: auto;
+    }
+    .listaLegal .cajon2 {
+        margin-left: 0px
+    }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .menu_bar {
+        display: block;
+    }
+
+    .contactos {
+        display: block;
+        z-index: 10;
+    }
+
+    .salir {
+        display: none;
+    }
+
+    .contactoTel {
+        display: none;
+    }
+
+    .botonesmenu {
+        width: 100px;
+        height: 100px;
+    }
+
+    .imgmenu {
+        font-size: 50px !important;
+    }
+
+    .imgmenubox {
+        font-size: 50px !important;
+    }
+
+    .listaLegal {
+        text-align: center;
+    }
+
+        .listaLegal ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .listaLegal .cajon2 {
+            margin-left: 0px
+        }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .menu_bar {
+        display: block;
+    }
+
+    .salir {
+        display: none;
+    }
+
+    .userAut {
+        display: block;
+        font-size: 12px;
+    }
+
+    .contactoTel {
+        display: none;
+    }
+
+    .contactos {
+        z-index: 10;
+        display: block;
+    }
+
+    .botonesmenu {
+        width: 100px;
+        height: 100px;
+    }
+
+    span {
+        font-size: 12px;
+    }
+
+    .contacto {
+        padding-top: 12px;
+    }
+
+        .contacto h6 {
+            font-size: 11px;
+        }
+
+    header nav {
+        top: 159px;
+    }
+
+    .Containerlogo_img img {
+        width: 170px;
+    }
+
+    .Containerlogo_img {
+        top: 50px;
+        left: 11px;
+    }
+
+    .listaLegal {
+        text-align: center;
+    }
+
+        .listaLegal ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+
+    .auricular {
+        width: 20px;
+    }
+
+    .whatsapp {
+        width: 20px;
+    }
+
+    .facebookfooter {
+        width: 10px;
+    }
+
+    .instagram {
+        width: 20px;
+    }
+
+    .linkedin {
+        width: 20px;
+    }
+
+    .infofooter {
+        font-size: 10px;
+        font-family: GilroyLigth;
+        color: white;
+    }
+    .listaLegal .cajon2 {
+        margin-left: 0px
+    }
+}

@@ -1,0 +1,367 @@
+﻿<link href="~/css/styleVuelos.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/panel.js" type="text/javascript"></script>
+
+
+<header style="padding-top:0px;">
+    <div class="Container">
+        <div class="submenu col-12">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 text-left">
+                    <p class="userAut"><strong>Bienvenido:</strong> @ViewBag.userName</p>
+                </div>
+
+                <div class="salir col-6 ">
+                    <a class="cerrar" href='@Url.Action("cerrar", "vuelosyOtros")'>
+                        <i class="exit fa fa-sign-out"></i>
+                        Cerrar Sesión
+                    </a>
+                </div>
+
+                <div class="redes col-12">
+                    <ul>
+                        <li><button class="btn_redes" onclick="window.open('https://www.facebook.com/gruposco-448478105889532/?ref=br_rs','_blank');" target="_blank"><img class="imgRedesFace" src="~/Images/Facebook1.png" /></button></li>
+                        <li><button class="btn_redes" onclick="window.open('https://www.instagram.com/grupos.co/','_blank');" target="_blank"><img class="imgRedes" src="~/Images/Instagram1.png" /></button></li>
+                        <li><button class="btn_redes" onclick="window.open('https://www.linkedin.com/company/grupos-co','_blank');" target="_blank"><img class="imgRedes" src="~/Images/Linkedin1.png" /></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="Containerlogo">
+            <div class="Containerlogo_img" style="width:280px">
+                <img src="~/Images/LogosloganM.png" alt="">
+            </div>
+            <div class="contactoTel">
+                <p>01 (800) 9520- 873</p>
+            </div>
+        </div>
+
+        <!-- Menu que se visualiza en versión mobile -->
+        <div class="menu_bar">
+            <a href="#" class="bt-menu">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <nav class="contactos">
+            <ul>
+                <li> <a href="tel:018007522303">Ventas 01 800 752 23 03</a></li>
+                <li> <a href="https://api.whatsapp.com/send?phone=573145723198text=Hola!%20Necesito%20información%20sobre%20un%20destino!" target="_blank">Whatsapp 314 572 31 98</a></li>
+                <li><a href="#"><span class="icon-earth textos"></span>Términos y Condiciones</a></li>
+                <li><a href="#"><span class="icon-earth textos"></span>Otros</a></li>
+                <li><a href='@Url.Action("Index", "Grupos")'><span class="icon-earth textos"></span>Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="principal">
+    <div class="container-fluid pb-4">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6 text-center mt-4 mb-3">
+                    <div class="mb-3"><span class="textos">VUELOS REGIONALES</span></div>
+                    <button class="botonesmenu shrink">
+                        <i class="imgmenu fa fa-plane"></i>
+                    </button>
+                    <div class="mt-3 mb-2"><span class="textos">GCA AIRLINES | SATENA | EASY FLY</span></div>
+                    <div><button class="ingresar btn" id="btnVuelos">Ingresar</button></div>
+                </div>
+
+                <div class="col-6 text-center mt-4 mb-3">
+                    <div class="mb-3"><span class="textos">TODOS LOS SERVICIOS</span></div>
+                    <button class="botonesmenu shrink">
+                        <i class="imgmenubox fa fa-archive"></i>
+                    </button>
+                    <div class="mt-3 mb-2"><span class="textos">PAQUETES | CRUCEROS | HOTELES | TOURS</span></div>
+                    <div><button class="ingresar btn">Ingresar</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="vuelos" style="display:none">
+    <div class="card">
+        <div class="col-12">
+            <div class="row pt-4 justify-content-center">
+                <div class="vuelosOption">
+                    <input type="radio" id="IdayVuelta" name="IdayVuelta" value="1" checked>
+                    <label for="IdayVuelta">Ida y Vuelta</label>
+                </div>
+                <div class="vuelosOption">
+                    <input type="radio" id="Sencillo" name="Sencillo" value="2">
+                    <label for="Sencillo">Sencillo</label>
+                </div>
+                <div class="vuelosOption">
+                    <input type="radio" id="Multidestino" name="Multidestino" value="3">
+                    <label for="Multidestino">Multidestino</label>
+                </div>
+            </div>
+            <div id="FormIdayVuelta" class="col-12" style="display:block">
+                <div class="row justify-content-center">
+                    <div class="col-3">
+                        <label class="col-12" for="origen1">Origen:</label>
+                        <select id="origen1" class="mi-selector">
+                            <option value="SELECCIONAR">Seleccionar</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label class="col-12" for="destino1">Destino:</label>
+                        <select id="destino1" class="mi-selector">
+                            <option value="SELECCIONAR">Seleccionar</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label for="fechaIda1">Ida:</label>
+                        <input type="date" id="fechaIda1" class="form-control">
+                    </div>
+                    <div class="col-3">
+                        <label for="fechaRegreso1">Regreso:</label>
+                        <input type="date" id="fechaRegreso1" class="form-control">
+                    </div>
+                    <div class="col-3">
+                        <label for="cabina1">Cabina:</label>
+                        <select id="cabina1" class="form-control">
+                            <option value="Economy">Económica</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label for="adultos1">Adultos:</label>
+                        <select id="adultos1" class="form-control">
+                            <option value="1">1 persona</option>
+                            <option value="2">2 personas</option>
+                            <option value="3">3 personas</option>
+                            <option value="4">4 personas</option>
+                            <option value="5">5 personas</option>
+                            <option value="6">6 personas</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label for="ninos1">Niños:</label>
+                        @*<input type="number" id="ninos1" class="form-control" value="0">*@
+                        <select id="niños1" class="form-control">
+                            <option value="0">0 Niños</option>
+                            <option value="1">1 Niños</option>
+                            <option value="2">2 Niños</option>
+                            <option value="3">3 Niños</option>
+                            <option value="4">4 Niños</option>
+                            <option value="5">5 Niños</option>
+                            <option value="6">6 Niños</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+
+                    </div>
+                    <div class="col-12 divBotonVuelos">
+                        <button id="btnIdayVuelta" class="buscarVuelos btn">Buscar vuelos</button>
+                    </div>
+                </div>
+            </div>
+            <div id="FormSencillo" class="col-12" style="display:none">
+                <div class="row justify-content-center">
+                    <div class="col-3">
+                        <label for="origen2">Origen:</label>
+                        <select id="origen2" class="form-control">
+                            <option value="SELECCIONAR">Seleccionar</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label for="destino2">Destino:</label>
+                        <select id="destino2" class="form-control">
+                            <option value="SELECCIONAR">Seleccionar</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label for="fechaIda1">Ida:</label>
+                        <input type="date" id="fechaIda1" class="form-control">
+                    </div>
+
+                    <div class="col-12 divBotonVuelos">
+                        <button class="buscarVuelos btn">Buscar vuelos</button>
+                    </div>
+                </div>
+            </div>
+            <div id="FormMultidestino" class="col-12" style="display:none">
+                <div class="row justify-content-center">
+                    <div class="row col-12 destinoGrupo">
+                        <div class="col-1"> <p class="numeroVuelo">VUELO 1</p></div>
+                        <div class="col-3">
+                            <label for="origen3">Origen:</label>
+                            <select id="origen3" class="form-control mi-selector">
+                                <option value="SELECCIONAR">Seleccionar</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label for="destino3">Destino:</label>
+                            <select id="destino3" class="form-control mi-selector">
+                                <option value="SELECCIONAR">Seleccionar</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label for="fechaIda1">Ida:</label>
+                            <input type="date" id="fechaIda1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col-12">
+                        <div class="col-1"> <p class="numeroVuelo">VUELO 2</p></div>
+                        <div class="col-3">
+                            <label for="origen3">Origen:</label>
+                            <select id="origen3" class="form-control">
+                                <option value="SELECCIONAR">Seleccionar</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label for="destino3">Destino:</label>
+                            <select id="destino3" class="form-control">
+                                <option value="SELECCIONAR">Seleccionar</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label for="fechaIda1">Ida:</label>
+                            <input type="date" id="fechaIda1" class="form-control">
+                        </div>
+
+                        <div class="col-12 divBotonVuelos">
+                            <button class="buscarVuelos btn">Buscar vuelos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display:none" id="divResultados">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="imgfooter col-12 mt-2 mb-2">
+                <img src="~/Images/Gruposlogan.svg" alt="" style="width:120px">
+            </div>
+            <div class="copy col-12">
+                <p>©Copyright ; grupos.co | Turismo Agencia de viajes.</p>
+            </div>
+
+            <div class="col-12">
+                <div class="row">
+                    <div class="listaLegal col-lg-4 col-sm-12">
+                        <ul>
+                            <li><a href="#" data-toggle="modal" data-target="#modalTerminos">Términos y condiciones</a></li>
+                            <li><a href="https://www.sic.gov.co/proteccion-del-consumidor" target="_blank">Protección al consumidor SIC</a></li>
+                            <li><a href="~/Documentos/Ley Retracto y  Desistimiento.pdf" target="_blank">Ley Retracto y/o Desistimiento</a></li>
+                            <li><a href="https://www.supertransporte.gov.co" target="_blank">Superintendencia de Puertos y Transporte</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="listaLegal col-lg-4 col-sm-12">
+                        <ul class="cajon2">
+                            <li class="listLegales"><a href="~/Documentos/RNT Grupos.co sas_2020.pdf" target="_blank">RNT</a></li>
+                            <li class="listLegales"><a href="http://www.aerocivil.gov.co/" target="_blank">Aerocivil</a></li>
+                            <li class="listLegales"><a href="~/Documentos/Politica de privacidad Grupos.co.pdf" target="_blank">Política de Privacidad</a></li>
+                            <li class="listLegales"><a href="~/Documentos/Protección a menores  Grupos.co.pdf" target="_blank">Protección a menores</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="listaLegal col-lg-4 col-sm-12">
+                        <ul>
+                            <li><p style="">Atención de PQRs - Operaciones@grupos.co</p></li>
+                            <li><a href="~/Documentos/Derechos del pasajero  y deberes del  transportador UAEAC.pdf" target="_blank">Derechos del pasajero y/o Deberes del trasnportador</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="infofooter text-center mb-3 mt-4 col-12">
+                <span class="textos">Grupos.co.S.A.S NIT. 901.278.022.4-Colombia, Teléfono: 01 8007522303.</span>
+                <br />
+                <span class="textos">Todos los derechos reservados. Registro Nacional de Turismo (RTN) No. 72012</span>
+            </div>
+
+            <div class="contacto col-lg-12">
+                <ul>
+                    <li>
+                        <span class="textos"> Ventas 01 800 752 23 03</span>
+                        <img src="~/Images/Auriculares.png" alt="" class="auricular">
+                    </li>
+                    <li><a href="https://www.facebook.com/gruposco-448478105889532/?ref=br_rs" target="_blank"><img class="facebookfooter" src="~/images/Facebook bl.png" /></a></li>
+                    <li><a href="https://www.instagram.com/grupos.co/" target="_blank"><img class="instagram" src="~/images/Instagram bl.png" /></a></li>
+                    <li><a href="https://www.linkedin.com/company/grupos-co" target="_blank"><img class="linkedin" src="~/images/Linkedin bl.png" /></a></li>
+                    <li><img src="~/Images/Whatsapp_bl.png" alt="" class="whatsapp"></li>
+                </ul>
+
+            </div>
+
+            <div class="siguenos text-center col-12">
+                <span class="textos">
+                    En el desarrollo de lo dispuesto en el artículo 17 de la ley 679 de 2001, la agencia rechaza la explotación, la pornografía, el turismo sexual y demás formas de abuso sexual con menores, que son <br />
+                    sacionadas penal y administrativamente conforme a las leyes colombianas.
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="modalTerminos" tabindex="-1" role="dialog" aria-labelledby="modalT&eacute;rminos" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content contentTerminos">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="textos" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="pb-3">
+                    <h1 class="titleTerminos"><strong>T&Eacute;RMINOS Y CONDICIONES</strong></h1>
+                </div>
+                <div class="tex1 text-justify">
+                    <h7>
+                        Pol&iacute;tica de reservaci&oacute;n
+                        Las tarifas publicadas en este sitio de Internet son v&aacute;lidas solamente el d&iacute;a de su cotizaci&oacute;n y est&aacute;n sujetas a cambios sin previo aviso. Las tarifas mostradas se garantizan al momento de recibir el pago correspondiente. Todas las reservaciones est&aacute;n sujetas a disponibilidad. La clave de confirmaci&oacute;n se otorga hasta haber recibido el pago total.
+                        Al reservar en l&iacute;nea o por tel&eacute;fono autorizas el uso de tu n&uacute;mero de tarjeta de cr&eacute;dito para realizar el pago, y confirmas expresamente conocer y aceptar nuestras pol&iacute;ticas de reservaci&oacute;n, pago, deslinde de responsabilidad y cancelaci&oacute;n. Todos los cambios en una reservaci&oacute;n est&aacute;n sujetos a disponibilidad y re-cotizaci&oacute;n de tarifas.
+                        Es necesario que imprimas tu cup&oacute;n de reservaci&oacute;n y lo presentes al momento de reclamar los servicios que reservaste.
+                        Estas pol&iacute;ticas tambi&eacute;n aplican para cancelar reservaciones realizadas en pagos fijos
+                        Pol&iacute;tica de pagos
+                        Aceptamos Visa, MasterCard y American Express como forma de pago.
+                        El monto correspondiente a tu reservaci&oacute;n ser&aacute; cargado inmediatamente a tu tarjeta de cr&eacute;dito y el cargo aparecer&aacute; en tu estado de cuenta con la leyenda como compa&ntilde;&iacute;a responsable del cargo.
+                        Tarifas mostradas en pesos colombianos ser&aacute;n cobradas en pesos colombiano. Tarifas mostradas en d&oacute;lares americanos ser&aacute;n cobradas en d&oacute;lares americanos para transacciones con tarjetas Visa y Mastercard. Para transacciones con American Express la tarifa en d&oacute;lares americanos ser&aacute; convertida a pesos colombianos al tipo de cambio vigente en la fecha de la transacci&oacute;n. Esta conversi&oacute;n puede causar que el monto que aparecer&aacute; en el estado de cuenta de tu tarjeta de cr&eacute;dito muestre una variaci&oacute;n de hasta 5% por debajo o encima de la fluctuaci&oacute;n internacional de tipos de cambio de divisas. no es responsable de esta fluctuaci&oacute;n y al aceptar esta pol&iacute;tica reconoces haber sido informado sobre esta fluctuaci&oacute;n en el tipo de cambio y estar de acuerdo que el cargo con tarjetas American Express se realice en pesos colombianos.
+
+
+                        Pol&iacute;tica de responsabilidad
+                        Informaci&oacute;n general
+                        presta servicios en calidad de intermediario entre el cliente y el prestador de los bienes y servicios publicados en este sitio web. establece negociaciones comerciales dentro de sus propios est&aacute;ndares de calidad y servicio, tales como, pero no limitados a, hospedaje, traslado terrestre, transportaci&oacute;n a&eacute;rea, eligiendo s&oacute;lo a los proveedores m&aacute;s calificados y de mayor prestigio del mercado. No obstante esto, no puede asumir ninguna responsabilidad frente a quienes compran servicios en su portal de Internet, por actos u omisiones de los proveedores aqu&iacute; anunciados, en virtud de que no tiene control alguno o relaci&oacute;n legal sobre su personal, equipo, operaci&oacute;n o bienes.
+                        Por este medio el cliente autoriza, a actuar como mediador en la contrataci&oacute;n de los distintos servicios elegidos, para conformar su paquete de viaje.
+                        El servicio de mediaci&oacute;n mercantil es realizado directamente por, desde su centro de operaciones situado en la Ciudad de Canc&uacute;n, Quintana Roo, utilizando su plataforma tecnol&oacute;gica, independientemente de la forma en la que se realice la compra, ya sea a trav&eacute;s de Internet, puntos de atenci&oacute;n a clientes, atenci&oacute;n telef&oacute;nica o cualquier otra forma de contacto.
+                        En caso de contrataci&oacute;n de Paquetes de Viaje en el extranjero, el cliente acepta que el aprovechamiento de los mismos ser&aacute; realizado fuera de territorio nacional, motivo por el cual traslada el Impuesto al Valor Agregado a la tasa del 0%, de conformidad con lo dispuesto por el art&iacute;culo 29, fracci&oacute;n IV, de la LIVA.
+                        La adquisici&oacute;n de "Paquetes de Viaje" con destino en el extranjero, que incluyan el servicio de transportaci&oacute;n a&eacute;rea iniciado en territorio nacional, , traslada el Impuesto al Valor Agregado a la tasa del 16%, &uacute;nicamente sobre la parte que represente el 25% de dicho medio de transporte.
+                        declara que:
+                        1.	Las fotograf&iacute;as mostradas en su portal de Internet son con fines representativos y no garantizan que a tu llegada, todo sea exactamente igual como aqu&iacute; se describe;
+                        2.	La categor&iacute;a de estrellas asignada a los hoteles, est&aacute; basada en la interpretaci&oacute;n de y puede diferir de las categor&iacute;as reportadas en otros lugares.
+                        3.	Las descripciones de los servicios de viaje son actualizadas por de manera constante pero no garantizan que todo ser&aacute; exactamente igual a tu llegada.
+                        4.	se reserva el derecho de rechazar a cualquier persona o cliente en el momento que considere necesario.
+                        5.	Cualquier reclamaci&oacute;n o notificaci&oacute;n por escrito en contra de , deber&aacute; ser recibida a m&aacute;s tardar con treinta (30) d&iacute;as despu&eacute;s de concluido el viaje.
+                        Deslinde de responsabilidad
+                        6.	no asumir&aacute; responsabilidad por ninguna reclamaci&oacute;n, costo o gasto producido por heridas personales o de terceras personas, accidentes o deceso, p&eacute;rdida o da&ntilde;os de objetos personales, falta de diversi&oacute;n, enojo, desilusi&oacute;n, angustia o frustraci&oacute;n (ya sea mental o f&iacute;sica) que resulte de las siguientes causas:
+                        7.	Actos u omisiones de cualquiera otra persona que no sea o sus empleados;
+                        8.	Enfermedad, robo, disputas laborales, huelgas, fallas mec&aacute;nicas, cuarentena, acciones gubernamentales, condiciones clim&aacute;ticas, o cualquier otra causa ajena al control directo de ;
+                        9.	Imposibilidad del cliente para viajar por no contar con los documentos requeridos tales como, pero no limitados a pasaportes, visas y certificados. En estos casos no aplican reembolsos.
+                        10.	Incumplimiento del cliente en seguir instrucciones incluyendo, pero no limitadas a horarios de salida de vuelos, hora y fecha de entrada y salida en hoteles, y pol&iacute;ticas de canje de cupones;
+                        11.	Cancelaci&oacute;n o cambio por cualquier raz&oacute;n de los servicios de viaje ofrecidos. se reserva el derecho de cancelar o cambiar los servicios publicados, pero se tratar&aacute; de sustituirlos con servicios similares. Si una reservaci&oacute;n debe ser cancelada, la responsabilidad de estar&aacute; limitada al reembolso de todo el dinero pagado por el cliente;
+                        12.	No aplican reembolsos totales en situaciones en las que el viaje tenga que ser cancelado, interrumpido o pospuesto por por razones que est&eacute;n fuera de su control (causas de fuerza mayor, tales como, pero no limitadas a, condiciones clim&aacute;ticas, huracanes, terremotos, huelgas, guerras, actos de terrorismo, etc.) y en los que las obligaciones contractuales de con sus proveedores no le permitan obtener reembolso de la suma pagada o a ser pagada al proveedor por cuenta del cliente. En estos casos, se reserva el derecho de retener un 10% del total de la cantidad pagada por la reservaci&oacute;n como gasto administrativo.
+                        13.	A pesar de que actualizamos las tarifas de manera constante, en casos remotos existe la posibilidad de que haya cambios en las tarifas sin previo aviso por contingencias o causas de fuerza mayor. En estos casos, es posible que el proveedor no tenga forma de actualizar r&aacute;pidamente las tarifas. hace revisiones peri&oacute;dicas donde es posible que haya diferencias entre el precio pagado por la reservaci&oacute;n y el precio requerido para usar el servicio. En caso de haber cambios en las tarifas, si &eacute;sta resulta en un precio menor, se cobrar&aacute; ese precio y se reembolsar&aacute; la diferencia. Si resulta en un precio mayor, uno de nuestros Asesores de Viaje se pondr&aacute; en contacto contigo y te informar&aacute; sobre el cambio. Si no est&aacute;s de acuerdo, te reembolsar&aacute; el 100% del monto pagado, pero no se hace responsable por reclamaciones o inconvenientes derivados del cambio de tarifas o la cancelaci&oacute;n de la reservaci&oacute;n.
+
+
+                    </h7>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,1032 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url('../fonts/Poppins-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyExtraBold;
+    src: url('../fonts/gilroyextrabold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyBold;
+    src: url('../fonts/gilroybold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyExtraBold;
+    src: url('../fonts/gilroyextrabold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyHeavy;
+    src: url('../fonts/gilroyheavy.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyLigth;
+    src: url('../fonts/gilroylight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyMedium;
+    src: url('../fonts/gilroymedium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: GilroyRegular;
+    src: url('../fonts/gilroyregular.ttf') format('truetype');
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background: #f2f2f2;
+    color: #6101d1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.Container {
+    width: 100%;
+    margin: auto;
+}
+
+.modal-header {
+    background-color: #6101d1;
+    color: white;
+}
+
+.modal-content {
+    width: 70%;
+    margin-left: 17%;
+}
+
+.container-fluid {
+    width: 100%
+}
+
+#modalRegistrocontent {
+    width: 80%;
+    margin-left: 13%;
+}
+
+.fa {
+    position: relative;
+    top: 15px;
+    font-size: 30px !important;
+    left: 10px;
+}
+
+.Containerlogo {
+    float: left;
+    margin: 1.4% 2.4%;
+}
+
+.Containerlogo_img img {
+    width: 25px;
+    position: relative;
+    left: 10px;
+}
+
+.imgcarousel {
+    width: 100%;
+}
+
+.socialheader {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 21px;
+    width: 100%;
+    text-align: center;
+    z-index: 90;
+}
+
+    .socialheader button {
+        display: block;
+        color: #000;
+        padding-bottom: 10px;
+        font-size: 0;
+        text-decoration: none;
+        border: 0px;
+        background-color: #fff;
+        cursor: pointer;
+        transform: translateX(-100%);
+        outline: none;
+    }
+
+.lista_redes {
+    position: relative;
+    width: 28px;
+    top: 0px;
+    padding-bottom: 15px;
+}
+
+.facebookfooter {
+    position: relative;
+    width: 14px;
+    top: 9px;
+    padding-bottom: 20px;
+}
+
+.instagram {
+    position: relative;
+    width: 25px;
+    top: 9px;
+    padding-bottom: 20px;
+}
+
+.linkedin {
+    position: relative;
+    width: 25px;
+    top: 9px;
+    padding-bottom: 20px;
+}
+
+header .Container {
+    display: table;
+}
+
+section {
+    width: 100%;
+    bottom: 25px;
+}
+
+main {
+    background: #f5f5f5;
+}
+
+.franquicias {
+    font-family: GilroyBold;
+    font-size: 15px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+    .franquicias #uno {
+        font-family: GilroyBold;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .franquicias #dos {
+        font-family: GilroyBold;
+        font-size: 15px;
+        text-align: center;
+    }
+
+#pagos {
+    font-family: GilroyBold;
+    width: 100%;
+    height: 40hv;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+    #pagos img {
+        align: center;
+        width: 40px;
+        height: 40px;
+    }
+
+.footer {
+    width: 100%;
+    display: block;
+    padding: 5px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: #4e008e;
+}
+
+.imgfooter img {
+    width: 120px;
+    padding: 5px;
+}
+
+.imgfooter {
+    justify-content: center;
+    display: flex;
+}
+
+.copy p {
+    font-family: GilroyLigth;
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 20px;
+}
+
+.copy a {
+    color: #fff;
+}
+
+.contacto {
+    display: flex;
+    justify-content: center;
+}
+
+    .contacto h6 {
+        font-family: GilroyBold;
+        font-size: 12px;
+        color: #fff;
+    }
+
+.siguenos span {
+    font-size: 11px;
+    color: white;
+    font-family: GilroyLigth;
+}
+
+.sociales {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    .sociales a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        margin: 4px;
+    }
+
+
+header nav {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.menu_bar {
+    display: none;
+}
+
+header nav ul {
+    overflow: hidden;
+    list-style: none;
+}
+
+    header nav ul li {
+        float: left;
+    }
+
+        header nav ul li a {
+            color: #6101d1;
+            padding: 20px;
+            display: block;
+            text-decoration: none;
+        }
+
+        header nav ul li span {
+            margin-right: 10px;
+        }
+
+        header nav ul li a:hover {
+        }
+
+section {
+    padding: 20px;
+}
+
+.Line-12 {
+    width: 100%;
+    height: 1px;
+    opacity: 1.2;
+    background-color: #dddddd;
+    margin: 5px auto;
+}
+
+p {
+    font-family: GilroyLigth;
+}
+
+.terminos {
+    position: absolute;
+    left: 34px;
+    font-size: 15px;
+}
+
+#terminos {
+    position: relative;
+    top: 3px;
+}
+
+.titleTerminos {
+    font-size: 20px;
+    font-family: GilroyExtraBold;
+}
+
+.contentTerminos {
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.error {
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+
+.preloader {
+    width: 80px;
+    height: 80px;
+    border: 10px solid #e2e1e1;
+    border-top: 10px solid #6101d1;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
+    left: 134px;
+    z-index: 10;
+    top: 170px;
+}
+
+
+.listaLegal a {
+    color: white;
+    font-size: 11px;
+    font-family: GilroyLigth;
+}
+
+.listaLegal ul {
+    list-style: none;
+}
+
+.listaLegal p {
+    color: white;
+    font-size: 11px;
+    font-family: GilroyLigth;
+    margin: 0;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    width: 70%;
+    height: 100%;
+    z-index: 30;
+    position: absolute;
+    left: 86px;
+    background-color: rgba(255,255,255,0.8);
+}
+
+
+
+.preloaderRegis {
+    width: 80px;
+    height: 80px;
+    border: 10px solid #e2e1e1;
+    border-top: 10px solid #6101d1;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
+    left: 155px;
+    z-index: 10;
+    top: 280px;
+}
+
+
+.spinRegis {
+    width: 80%;
+    height: 100%;
+    z-index: 30;
+    position: absolute;
+    left: 65px;
+    background-color: rgba(255,255,255,0.8);
+}
+
+.listaPrincipal ul {
+    list-style: none;
+    color: black;
+}
+
+.columnasPrincipales {
+    width: 100%;
+    margin-top: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Principal1 {
+    width: 18%;
+    margin: 0;
+    margin-top: 50px;
+    margin: 12px;
+    position: relative;
+    font-size: 11px;
+    font-family: GilroyLigth;
+    margin-left: 6%;
+}
+
+.Principal2 {
+    width: 18%;
+    margin: 0;
+    margin-top: 50px;
+    margin: 12px;
+    position: relative;
+    font-size: 11px;
+    font-family: GilroyLigth;
+}
+
+.Principal3 {
+    width: 18%;
+    margin: 0;
+    margin-top: 50px;
+    margin: 12px;
+    position: relative;
+    font-size: 11px;
+    font-family: GilroyLigth;
+}
+
+.Principal4 {
+    width: 11%;
+    margin: 0;
+    margin-top: 50px;
+    margin: 12px;
+    position: relative;
+    font-size: 11px;
+    font-family: GilroyLigth;
+}
+
+.tituloPrincipal span {
+    font-size: 25px;
+    font-family: GilroyBold;
+}
+
+
+@media screen and (max-width:1024px) {
+    header nav {
+        width: 100%;
+        height: 100%;
+        left: -100%;
+        margin: 0;
+        position: fixed;
+    }
+
+        header nav ul li {
+            display: block;
+            float: none;
+            border-bottom: 1px solid rgba(255,255,255, .3);
+        }
+
+    .menu_bar {
+        display: block;
+        width: 100%;
+        position: relative;
+        right: 15px;
+        top: -3px;
+    }
+
+        .menu_bar .bt-menu {
+            display: block;
+            padding: 20px;
+            color: #6101d1;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 25px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .menu_bar i {
+            float: right;
+            font-size: 40px;
+            color: #6101d1;
+            z-index: 50;
+        }
+
+    .contactos ul {
+        background-color: white;
+        position: relative;
+        top: 43%;
+        width: 100%;
+    }
+
+
+    .contacto ul {
+        list-style: none;
+    }
+
+    .contacto span {
+        font-size: 10px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .contacto li {
+        display: inline;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .contacto h6 {
+        font-family: GilroyBold;
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .facebookfooter {
+        width: 14px;
+    }
+
+    .whatsapp {
+        width: 25px;
+    }
+
+    .auricular {
+        width: 25px;
+    }
+
+    .infofooter {
+        font-size: 12px;
+        font-family: GilroyLigth;
+        color: white;
+    }
+}
+
+@media (min-width:1025px) {
+    header {
+        position: fixed;
+        z-index: 100;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        width: 80px;
+        height: 100vh;
+        padding: 25px 0px;
+        text-align: center;
+        overflow: hidden;
+        border: 0px;
+        outline: none;
+        background: #fff;
+    }
+
+    #boton_iniciosesion {
+        font-size: 11px;
+        background-color: #6101d1;
+        border-radius: 10px;
+        padding: 7px 3px 8px;
+        color: white;
+    }
+
+    .Container {
+        width: 1024px;
+    }
+
+    .Containerlogo {
+        z-index: 90;
+        position: relative;
+    }
+
+    .Containerlogo_img img {
+        width: 25px;
+    }
+
+
+    .socialheader button {
+        display: block;
+        color: #acacad;
+        padding-bottom: 10px;
+        font-size: 23px;
+        text-decoration: none;
+        border: 0px;
+        background-color: #fff;
+        cursor: pointer;
+        transform: translateX(0%);
+    }
+
+    .cuotas {
+        width: 94%;
+        display: flex;
+        margin-left: 6%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .franquicias {
+        width: 25%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        text-align: center;
+    }
+
+        .franquicias #uno {
+            font-family: GilroyBold;
+            font-size: 18px;
+            text-align: right;
+        }
+
+        .franquicias #dos {
+            font-family: GilroyBold;
+            font-size: 18px;
+            text-align: left;
+        }
+
+    #pagos {
+        width: 50%;
+        height: 40hv;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+        #pagos img {
+            align: center;
+            width: 45px;
+            height: 45px;
+        }
+
+    .footer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background: #4e008e;
+    }
+
+
+    .imgfooter {
+        justify-content: center;
+        display: flex;
+    }
+
+    .copy p {
+        font-family: GilroyLigth;
+        font-size: 13px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .copy a {
+        color: #fff;
+    }
+
+    .contacto ul {
+        list-style: none;
+    }
+
+    .contacto span {
+        font-size: 10px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .contacto li {
+        display: inline;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .contacto h6 {
+        font-family: GilroyBold;
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .facebookfooter {
+        width: 14px;
+    }
+
+    .whatsapp {
+        width: 25px;
+    }
+
+    .auricular {
+        width: 25px;
+    }
+
+    .siguenos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+        .siguenos h6 {
+            font-family: GilroyLigth;
+            color: #fff;
+            padding: 0px;
+        }
+
+    .sociales {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+        .sociales a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 4px;
+        }
+
+    .contactos {
+        display: none;
+    }
+
+    .infofooter {
+        font-size: 12px;
+        font-family: GilroyLigth;
+        color: white;
+    }
+}
+
+/* 
+##Device = Desktops
+##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 320px) and (max-width: 640px) {
+    .contactos ul {
+        top: 229px;
+    }
+
+    .spin {
+        width: 100%;
+        left: 0;
+    }
+
+    .spinRegis {
+        width: 100%;
+        left: 0;
+    }
+
+    .preloaderRegis {
+        left: 130px;
+        top: 275px;
+    }
+
+    .modal-title {
+        margin-left: 30% !important;
+        font-size: 18px !important;
+    }
+
+    #modalRegistroLabel {
+        margin-left: 36% !important;
+        font-size: 20px !important;
+    }
+
+    .listaLegal ul {
+        list-style: none;
+    }
+
+    .auricular {
+        width: 20px;
+    }
+
+    .whatsapp {
+        width: 20px;
+    }
+
+    .facebookfooter {
+        width: 10px;
+    }
+
+    .instagram {
+        width: 20px;
+    }
+
+    .linkedin {
+        width: 20px;
+    }
+
+    .contacto ul {
+        list-style: none;
+    }
+
+    .contacto span {
+        font-size: 10px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .contacto li {
+        display: inline;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .Principal1 {
+        left: 0;
+        font-size: 12px;
+        margin-left: 0;
+        width: 40%;
+    }
+
+    .Principal2 {
+        left: 0;
+        font-size: 10px;
+        width: 40%;
+    }
+
+    .Principal3 {
+        left: 0;
+        font-size: 10px;
+        width: 40%;
+    }
+
+    .Principal4 {
+        left: 0;
+        font-size: 10px;
+        width: 40%;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 667px) {
+    .contactos ul {
+        top: 229px;
+    }
+
+    .spin {
+        width: 100%;
+        left: 0;
+    }
+
+    .spinRegis {
+        width: 100%;
+        left: 0;
+    }
+
+    .listaLegal ul {
+        list-style: none;
+    }
+
+    .auricular {
+        width: 15px;
+    }
+
+    .whatsapp {
+        width: 15px;
+    }
+
+    .facebookfooter {
+        width: 10px;
+    }
+
+    .instagram {
+        width: 15px;
+    }
+
+    .linkedin {
+        width: 15px;
+    }
+
+    .contacto ul {
+        list-style: none;
+    }
+
+    .contacto span {
+        font-size: 10px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .contacto li {
+        display: inline;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .infofooter {
+        font-size: 10px;
+        font-family: GilroyLigth;
+        color: white;
+    }
+
+    .Principal1 {
+        left: 0;
+        margin-left: 0;
+        width: 40%;
+    }
+
+    .Principal2 {
+        left: 0;
+        width: 40%;
+    }
+
+    .Principal3 {
+        left: 0;
+        width: 40%;
+    }
+
+    .Principal3 {
+        left: 0;
+        width: 40%;
+    }
+}
+
+@media (min-width: 414px) and (max-width: 736px) {
+    .contactos ul {
+        top: 228px;
+    }
+
+    .spin {
+        width: 100%;
+        left: 0;
+    }
+
+    .preloader {
+        left: 163px;
+    }
+
+    .spinRegis {
+        width: 100%;
+        left: 0;
+    }
+
+    .preloaderRegis {
+        left: 160px;
+        top: 275px;
+    }
+
+    .listaLegal ul {
+        list-style: none;
+    }
+
+    .auricular {
+        width: 15px;
+    }
+
+    .whatsapp {
+        width: 15px;
+    }
+
+    .facebookfooter {
+        width: 10px;
+    }
+
+    .instagram {
+        width: 15px;
+    }
+
+    .linkedin {
+        width: 15px;
+    }
+
+    .contacto ul {
+        list-style: none;
+    }
+
+    .contacto span {
+        font-size: 10px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .contacto li {
+        display: inline;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .infofooter {
+        font-size: 10px;
+        font-family: GilroyLigth;
+        color: white;
+    }
+
+    .Principal1 {
+        left: 0;
+        margin-left: 0;
+        width: 40%;
+    }
+
+    .Principal2 {
+        left: 0;
+        width: 40%;
+    }
+
+    .Principal3 {
+        left: 0;
+        width: 40%;
+    }
+
+    .Principal4 {
+        left: 0;
+        width: 40%;
+    }
+}

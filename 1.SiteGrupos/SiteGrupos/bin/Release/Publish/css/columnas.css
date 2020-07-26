@@ -1,0 +1,436 @@
+.columnas {
+    width: 100%;
+    margin-top: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #F5F5F5;
+}
+
+.columna1 {
+    width: 75%;
+    max-width: 270px;
+    height: 540px;
+    margin: 0;
+    margin-top: 50px;
+    background-color: #fff;
+    transition: transform .3s;
+    border-radius: 38px;
+    box-shadow: 3px 8px 32px #AEADAD;
+    margin: 12px;
+    overflow: hidden;
+    position: relative;
+    left: 35px;
+}
+
+    .columna1 Img {
+        border-radius: 33px 33px 10px 10px;
+        margin-top: 2.5%;
+        margin-left: 2.5%;
+        box-shadow: 1px 2px 4px #AEADAD;
+        width: 95%;
+    }
+
+.title1 {
+    font-family: GilroyExtraBold;
+    font-size: 18px;
+    background: #fff;
+    margin-left: 8%;
+    margin-top: 4%;
+    margin-bottom: 10%;
+}
+
+.price1 {
+    font-family: GilroyRegular;
+    font-size: 13px;
+    background: #fff;
+    margin-left: 8%;
+    margin-top: 5%;
+}
+
+.Valor1 {
+    font-family: GilroyBold;
+    font-size: 25px;
+    background: #fff;
+    margin-left: 8%;
+    margin-top: 1%;
+}
+
+h4 {
+    font-family: GilroyRegular;
+    font-size: 12px;
+    background: #fff;
+    margin-left: 8%;
+    margin-top: 1%;
+}
+
+hr {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    border: 0.5px solid gray;
+    margin-top: 8px
+}
+
+#Condiciones {
+    font-family: GilroyRegular;
+    font-size: 12px;
+    background: #fff;
+    margin-left: 8%;
+    margin-top: 8%;
+    margin-right: 8%
+}
+
+.columna1:hover {
+    -ms-transform: scale(0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.button1 {
+    font-family: GilroyBold;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #10D3CD;
+    border: none;
+    color: white;
+    padding: 15px 55px;
+    border-radius: 45px;
+    box-shadow: 1px 3px 8px #DFDDDD;
+    margin-bottom: 20px;
+    display: block;
+    margin: 2.1em auto;
+}
+
+.columna2 {
+    width: 75%;
+    max-width: 270px;
+    height: 540px;
+    margin: 0;
+    margin-top: 50px;
+    background-color: #fff;
+    transition: transform .3s;
+    border-radius: 38px;
+    box-shadow: 3px 8px 32px #AEADAD;
+    margin: 12px;
+    overflow: hidden;
+    position: relative;
+    left: 35px;
+}
+
+    .columna2 Img {
+        border-radius: 33px 33px 10px 10px;
+        margin-top: 2.5%;
+        margin-left: 2.5%;
+        box-shadow: 1px 2px 4px #AEADAD;
+        width: 95%;
+    }
+
+.title2 {
+    font-family: GilroyExtraBold;
+    font-size: 18px;
+    margin-left: 8%;
+    margin-top: 4%;
+    margin-bottom: 1%;
+}
+
+.price2 {
+    font-family: GilroyRegular;
+    font-size: 13px;
+    margin-left: 8%;
+    margin-top: 2%;
+}
+
+.Valor2 {
+    font-family: GilroyBold;
+    font-size: 25px;
+    margin-left: 8%;
+    margin-top: 1%;
+}
+
+.columna2:hover {
+    -ms-transform: scale(0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.button2 {
+    font-family: GilroyBold;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #6101d1;
+    border: none;
+    color: white;
+    padding: 15px 55px;
+    border-radius: 45px;
+    box-shadow: 1px 3px 8px #DFDDDD;
+    margin-bottom: 20px;
+    display: block;
+    margin: 2.1em auto;
+}
+
+.columna3 {
+    width: 75%;
+    max-width: 270px;
+    height: 540px;
+    margin: 0;
+    margin-top: 50px;
+    background-color: #fff;
+    transition: transform .3s;
+    border-radius: 38px;
+    box-shadow: 3px 8px 32px #AEADAD;
+    margin: 12px;
+    overflow: hidden;
+    position: relative;
+    left: 35px;
+}
+
+    .columna3 Img {
+        border-radius: 33px 33px 10px 10px;
+        margin-top: 2.5%;
+        margin-left: 2.5%;
+        box-shadow: 1px 2px 4px #AEADAD;
+        width: 95%;
+    }
+
+.title3 {
+    font-family: GilroyExtraBold;
+    font-size: 18px;
+    margin-left: 8%;
+    margin-top: 4%;
+    margin-bottom: 8%;
+}
+
+.price3 {
+    font-family: GilroyRegular;
+    font-size: 13px;
+    margin-left: 8%;
+    margin-top: 2%;
+}
+
+.Valor3 {
+    font-family: GilroyBold;
+    font-size: 25px;
+    margin-left: 8%;
+    margin-top: 1%;
+}
+
+.columna3:hover {
+    -ms-transform: scale(0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.button3 {
+    font-family: GilroyBold;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #FF0080;
+    border: none;
+    color: white;
+    padding: 15px 55px;
+    border-radius: 45px;
+    box-shadow: 1px 3px 8px #DFDDDD;
+    margin-bottom: 20px;
+    display: block;
+    margin: 1.3em auto;
+}
+
+.ColumnasLegales {
+    width: 100%;
+    margin-top: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ColumnaLegal1 {
+    width: 25%;
+    margin: 0;
+    margin-top: 50px;
+    margin: 12px;
+    position: relative;
+    left: 4%;
+}
+
+.ColumnaLegal2 {
+    width: 25%;
+    margin: 0;
+    margin-top: 50px;
+    margin: 12px;
+    position: relative;
+    left: 4%;
+}
+
+.ColumnaLegal3 {
+    width: 25%;
+    margin: 0;
+    margin-top: 50px;
+    margin: 12px;
+    position: relative;
+    left: 4%;
+}
+
+.listLegales {
+    margin-left: 60px;
+}
+
+
+@media (min-width:1024px) {
+    .columnas {
+        width: 100%;
+        height: 600px;
+        margin-top: 1px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-evenly;
+        background-color: #F5F5F5;
+    }
+
+    .columna1 {
+        width: 75%;
+        max-width: 300px;
+        height: 540px;
+        margin: 0;
+        margin-top: 50px;
+        background-color: #fff;
+        transition: transform .3s;
+        border-radius: 38px;
+        box-shadow: 3px 8px 32px #AEADAD;
+        margin: 12px;
+        overflow: hidden;
+        position: relative;
+        left: 35px;
+    }
+
+    .columna2 {
+        width: 75%;
+        max-width: 300px;
+        height: 540px;
+        margin: 0;
+        margin-top: 50px;
+        background-color: #fff;
+        transition: transform .3s;
+        border-radius: 38px;
+        box-shadow: 3px 8px 32px #AEADAD;
+        margin: 12px;
+        overflow: hidden;
+        position: relative;
+        left: 35px;
+    }
+
+    .columna3 {
+        width: 75%;
+        max-width: 300px;
+        height: 540px;
+        margin: 0;
+        margin-top: 50px;
+        background-color: #fff;
+        transition: transform .3s;
+        border-radius: 38px;
+        box-shadow: 3px 8px 32px #AEADAD;
+        margin: 12px;
+        overflow: hidden;
+        position: relative;
+        left: 35px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 653px) {
+    .ColumnasLegales {
+        display: flex;
+        justify-content: center;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+
+    .ColumnaLegal1 {
+        width: 75%;
+        margin: 0;
+        margin-top: 0;
+        left: 0;
+    }
+
+    .ColumnaLegal2 {
+        width: 75%;
+        margin: 0;
+        margin-top: 0;
+        left: 0;
+    }
+
+    .ColumnaLegal3 {
+        width: 75%;
+        margin: 0;
+        margin-top: 0;
+        left: 0;
+    }
+
+    .listLegales {
+        margin-left: 0px;
+    }
+
+    .columna1{
+        left:0;
+    }
+    .columna2{
+        left:0;
+    }
+    .columna3{
+        left:0;
+    }
+}
+
+@media (min-width: 414px) and (max-width: 736px) {
+    .ColumnasLegales {
+        width: 94%;
+        margin-left: 6%;
+        display: flex;
+        justify-content: center;
+        justify-content: space-evenly;
+    }
+
+    .ColumnaLegal1 {
+        width: 75%;
+        left: 0;
+    }
+
+    .ColumnaLegal2 {
+        width: 75%;
+        left: 0;
+    }
+
+    .ColumnaLegal3 {
+        width: 75%;
+        left: 0;
+    }
+
+    .listLegales {
+        margin-left: 0px;
+    }
+    .columna1 {
+        left: 0;
+    }
+
+    .columna2 {
+        left: 0;
+    }
+
+    .columna3 {
+        left: 0;
+    }
+}
+
+@media (min-width: 522px) and (max-width: 1024px) {
+    .columna1 {
+        left: 0;
+    }
+
+    .columna2 {
+        left: 0;
+    }
+
+    .columna3 {
+        left: 0;
+    }
+}

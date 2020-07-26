@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GruposModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Agency">
+          <Key>
+            <PropertyRef Name="agencyId" />
+          </Key>
+          <Property Name="agencyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="documentType" Type="varchar" MaxLength="100" />
+          <Property Name="agencyName" Type="varchar" MaxLength="300" />
+          <Property Name="contactType" Type="varchar" MaxLength="100" />
+          <Property Name="contactName" Type="varchar" MaxLength="300" />
+          <Property Name="cityName" Type="varchar" MaxLength="300" />
+          <Property Name="phoneNumber" Type="varchar" MaxLength="100" />
+          <Property Name="emailAddress" Type="varchar" MaxLength="300" />
+          <Property Name="terminos" Type="bit" />
+          <Property Name="userName" Type="varchar" MaxLength="100" />
+          <Property Name="password" Type="varchar" MaxLength="100" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="Id_City" />
+          </Key>
+          <Property Name="Id_City" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="City_Code" Type="varchar" MaxLength="30" />
+          <Property Name="City_Name" Type="varchar" MaxLength="60" />
+          <Property Name="City_Status" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="GruposModelStoreContainer">
+          <EntitySet Name="Agency" EntityType="Self.Agency" Schema="grupos1_adminDb" store:Type="Tables" />
+          <EntitySet Name="Cities" EntityType="Self.Cities" Schema="grupos1_adminDb" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GruposModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Agency">
+          <Key>
+            <PropertyRef Name="agencyId" />
+          </Key>
+          <Property Name="agencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="documentType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="agencyName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="contactType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="contactName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="cityName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="phoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="emailAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="terminos" Type="Boolean" />
+          <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="Id_City" />
+          </Key>
+          <Property Name="Id_City" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="City_Code" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="City_Name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="City_Status" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="ctx_grupos" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Agency" EntityType="Self.Agency" />
+          <EntitySet Name="Cities" EntityType="Self.Cities" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GruposModelStoreContainer" CdmEntityContainer="ctx_grupos">
+          <EntitySetMapping Name="Agency">
+            <EntityTypeMapping TypeName="GruposModel.Agency">
+              <MappingFragment StoreEntitySet="Agency">
+                <ScalarProperty Name="agencyId" ColumnName="agencyId" />
+                <ScalarProperty Name="documentType" ColumnName="documentType" />
+                <ScalarProperty Name="agencyName" ColumnName="agencyName" />
+                <ScalarProperty Name="contactType" ColumnName="contactType" />
+                <ScalarProperty Name="contactName" ColumnName="contactName" />
+                <ScalarProperty Name="cityName" ColumnName="cityName" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+                <ScalarProperty Name="terminos" ColumnName="terminos" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="GruposModel.Cities">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="Id_City" ColumnName="Id_City" />
+                <ScalarProperty Name="City_Code" ColumnName="City_Code" />
+                <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+                <ScalarProperty Name="City_Status" ColumnName="City_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

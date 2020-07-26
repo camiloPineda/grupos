@@ -1,0 +1,25 @@
+#btn-menu {
+  display: none;
+}
+
+header label {
+  float: right;
+  margin: 9px 8px;
+  cursor: pointer;
+}
+
+
+@media (min-width:1025px) {
+  .menu{
+    position: static;
+    width: auto;
+    height: auto;
+    transform: translateX(0%);
+    float: right;
+    display: flex;
+  }
+
+  header label {
+    display: none;
+  }
+}

@@ -1,0 +1,436 @@
+﻿
+<script src="~/Scripts/panel.js" type="text/javascript"></script>
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="~/css/banner.css" rel="stylesheet" type="text/css" />
+<link href="~/css/columnas.css" rel="stylesheet" type="text/css" />
+<link href="~/css/estilos.css" rel="stylesheet" type="text/css" />
+<link href="~/css/estiloscontactos.css" rel="stylesheet" type="text/css" />
+<link href="~/css/menu.css" rel="stylesheet" type="text/css" />
+<link href="~/css/slider.css" rel="stylesheet" type="text/css" />
+
+<header style="padding-top:0px;">
+    <div class="Container">
+        <div class="Containerlogo">
+            <div class="Containerlogo_img">
+                <img src="~/Images/Logo-10.svg" alt="">
+            </div>
+        </div>
+
+        <!-- Redes sociales header pc -->
+        <div class="socialheader">
+            <button onclick="window.open('https://www.facebook.com/gruposco-448478105889532/?ref=br_rs','_blank');" target="_blank"><img class="lista_redes" src="~/Images/Facebook.svg" /></button>
+            <button onclick="window.open('https://www.instagram.com/grupos.co/','_blank');" target="_blank"><img class="lista_redes" src="~/Images/Instagram.png" /></button>
+            <button onclick="window.open('https://www.linkedin.com/company/grupos-co','_blank');" target="_blank"><img class="lista_redes" src="~/Images/Linkedin.svg" /></button>
+            <button id="boton_iniciosesion" type="button" data-toggle="modal" data-target="#exampleModal">Iniciar Sesión</button>
+
+            <!-- Menu que se visualiza en versión mobile -->
+            <div class="menu_bar">
+                <a href="#" class="bt-menu">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+
+            <nav class="contactos">
+                <ul>
+                    <li> <a href="tel:018007522303">Ventas 01 800 752 23 03</a></li>
+                    <li> <a href="https://api.whatsapp.com/send?phone=573145723198text=Hola!%20Necesito%20información%20sobre%20un%20destino!" target="_blank">Whatsapp 314 572 31 98</a></li>
+                    <li><a data-toggle="modal" data-target="#exampleModal" style="cursor:pointer; color:#6101d1">Iniciar Sesión</a></li>
+                    <li><a href="#"><span class="icon-earth"></span>Términos y Condiciones</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+@*Modal de inicio de sesion y boton registrate*@
+
+<div class="modal fade mt-5" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding-bottom:10px;">
+                <div class="input-group mb-3">
+                    <input id="userName" type="text" placeholder="Usuario" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" autocomplete="off">
+                    <i class="user fa fa-user"></i>
+                    <div class="input-group col-12"><span id="userNameError" class="error"></span></div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input id="password" type="password" placeholder="Contraseña" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" autocomplete="off">
+                    <i class="user fa fa-lock"></i>
+                    <div class="input-group col-12"><span id="passwordErrorLogin" class="error"></span></div>
+                </div>
+
+                <div class="col-12 text-center mb-4 mt-4">
+                    <button id="btnLogin" type="button" class="btn" style="background-color:#6101d1; color:white; cursor:pointer; width:75%">Entrar</button>
+                </div>
+
+                <div class="Line-12"></div>
+
+                <div class="col-12 p-0">
+                    <p class="m-0" style="font-size:12px;">¿Olvidó su contraseña?</p> <a data-toggle="modal" data-target="#modalRecuPassword" style="cursor:pointer; font-size:12px; color:#6101d1">Recuperar Contraseña</a>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="col-12 text-center">
+                    <p>¿Eres nuevo en Grupos.co?</p>
+                    <a class="btn" href="#" type="button" id="btnRegistrate" data-toggle="modal" data-target="#modalRegistro" style="background-color:#6101d1; color:white; cursor:pointer; width:64%">Regístrate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*Modal formulario de registro*@
+
+<div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" id="modalRegistrocontent">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalRegistroLabel">Registro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="input-group col-12 mb-3">
+                    <select id="documentType" class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <option class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="Nit">Nit</option>
+                        <option class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="CC">CC</option>
+                    </select>
+                    <div class="input-group col-12"><span id="documentTypeError" class="error"></span></div>
+                </div>
+
+
+                <div class="input-group col-12 mb-3">
+                    <input id="agencyName" type="text" placeholder="Nombre Agencia" class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" autocomplete="off">
+                    <div class="input-group col-12"><span id="agencyNameError" class="error"></span></div>
+                </div>
+
+
+                <div class="input-group col-12 mb-3">
+                    <select id="contactType" class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <option class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="Propietario">Propietario</option>
+                        <option class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="Agente">Agente</option>
+                    </select>
+                    <div class="input-group col-12"><span id="contactTypeError" class="error"></span></div>
+                </div>
+
+                <div class="input-group col-12 mb-3">
+                    <input id="contactName" type="text" placeholder="Nombre Contacto" class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" autocomplete="off">
+                    <div class="input-group col-12"><span id="contactNameError" class="error">Campo obligatorio</span></div>
+                </div>
+
+                <div class="input-group col-12 mb-3">
+                    <input id="cityName" type="text" placeholder="Ciudad" class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" autocomplete="off">
+                    <div class="input-group col-12"><span id="cityNameError" class="error"></span></div>
+                </div>
+
+                <div class="input-group col-12 mb-3">
+                    <input id="phoneNumber" type="text" placeholder="Teléfono Contacto" class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" autocomplete="off">
+                    <div class="input-group col-12"><span id="phoneNumberError" class="error"></span></div>
+                </div>
+
+                <div class="input-group col-12 mb-3">
+                    <input id="emailAddress" type="text" placeholder="Correo Electrónico" class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" autocomplete="off">
+                    <div class="input-group col-12"><span id="emailError" class="error"></span></div>
+                </div>
+
+                <div class="input-group col-12 mb-3">
+                    <input id="passwordRegister" type="password" placeholder="Contraseña" class="col-12 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" autocomplete="off">
+                    <div class="input-group col-12"><span id="passwordError" class="error"></span></div>
+                </div>
+
+                <div class="input-group col-12 mb-3">
+                    <input type="checkbox" class="" id="terminos" />
+                    <a class="terminos" href="#" data-toggle="modal" data-target="#modalTerminos">T&eacute;rminos y condiciones</a>
+                    <div class="input-group col-12"><span id="terminosError" class="error"></span></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn" id="BtnAceptarRegistro" style="background-color:#6101d1; color:white; width:90%">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Modal Terminos y condiciones*@
+<div class="modal fade" id="modalTerminos" tabindex="-1" role="dialog" aria-labelledby="modalT&eacute;rminos" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content contentTerminos">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="pb-3">
+                    <h1 class="titleTerminos"><strong>T&Eacute;RMINOS Y CONDICIONES</strong></h1>
+                </div>
+                <div class="tex1 text-justify">
+                    <h7>
+                        Pol&iacute;tica de reservaci&oacute;n
+                        Las tarifas publicadas en este sitio de Internet son v&aacute;lidas solamente el d&iacute;a de su cotizaci&oacute;n y est&aacute;n sujetas a cambios sin previo aviso. Las tarifas mostradas se garantizan al momento de recibir el pago correspondiente. Todas las reservaciones est&aacute;n sujetas a disponibilidad. La clave de confirmaci&oacute;n se otorga hasta haber recibido el pago total.
+                        Al reservar en l&iacute;nea o por tel&eacute;fono autorizas el uso de tu n&uacute;mero de tarjeta de cr&eacute;dito para realizar el pago, y confirmas expresamente conocer y aceptar nuestras pol&iacute;ticas de reservaci&oacute;n, pago, deslinde de responsabilidad y cancelaci&oacute;n. Todos los cambios en una reservaci&oacute;n est&aacute;n sujetos a disponibilidad y re-cotizaci&oacute;n de tarifas.
+                        Es necesario que imprimas tu cup&oacute;n de reservaci&oacute;n y lo presentes al momento de reclamar los servicios que reservaste.
+                        Estas pol&iacute;ticas tambi&eacute;n aplican para cancelar reservaciones realizadas en pagos fijos
+                        Pol&iacute;tica de pagos
+                        Aceptamos Visa, MasterCard y American Express como forma de pago.
+                        El monto correspondiente a tu reservaci&oacute;n ser&aacute; cargado inmediatamente a tu tarjeta de cr&eacute;dito y el cargo aparecer&aacute; en tu estado de cuenta con la leyenda como compa&ntilde;&iacute;a responsable del cargo.
+                        Tarifas mostradas en pesos colombianos ser&aacute;n cobradas en pesos colombiano. Tarifas mostradas en d&oacute;lares americanos ser&aacute;n cobradas en d&oacute;lares americanos para transacciones con tarjetas Visa y Mastercard. Para transacciones con American Express la tarifa en d&oacute;lares americanos ser&aacute; convertida a pesos colombianos al tipo de cambio vigente en la fecha de la transacci&oacute;n. Esta conversi&oacute;n puede causar que el monto que aparecer&aacute; en el estado de cuenta de tu tarjeta de cr&eacute;dito muestre una variaci&oacute;n de hasta 5% por debajo o encima de la fluctuaci&oacute;n internacional de tipos de cambio de divisas. no es responsable de esta fluctuaci&oacute;n y al aceptar esta pol&iacute;tica reconoces haber sido informado sobre esta fluctuaci&oacute;n en el tipo de cambio y estar de acuerdo que el cargo con tarjetas American Express se realice en pesos colombianos.
+
+
+                        Pol&iacute;tica de responsabilidad
+                        Informaci&oacute;n general
+                        presta servicios en calidad de intermediario entre el cliente y el prestador de los bienes y servicios publicados en este sitio web. establece negociaciones comerciales dentro de sus propios est&aacute;ndares de calidad y servicio, tales como, pero no limitados a, hospedaje, traslado terrestre, transportaci&oacute;n a&eacute;rea, eligiendo s&oacute;lo a los proveedores m&aacute;s calificados y de mayor prestigio del mercado. No obstante esto, no puede asumir ninguna responsabilidad frente a quienes compran servicios en su portal de Internet, por actos u omisiones de los proveedores aqu&iacute; anunciados, en virtud de que no tiene control alguno o relaci&oacute;n legal sobre su personal, equipo, operaci&oacute;n o bienes.
+                        Por este medio el cliente autoriza, a actuar como mediador en la contrataci&oacute;n de los distintos servicios elegidos, para conformar su paquete de viaje.
+                        El servicio de mediaci&oacute;n mercantil es realizado directamente por, desde su centro de operaciones situado en la Ciudad de Canc&uacute;n, Quintana Roo, utilizando su plataforma tecnol&oacute;gica, independientemente de la forma en la que se realice la compra, ya sea a trav&eacute;s de Internet, puntos de atenci&oacute;n a clientes, atenci&oacute;n telef&oacute;nica o cualquier otra forma de contacto.
+                        En caso de contrataci&oacute;n de Paquetes de Viaje en el extranjero, el cliente acepta que el aprovechamiento de los mismos ser&aacute; realizado fuera de territorio nacional, motivo por el cual traslada el Impuesto al Valor Agregado a la tasa del 0%, de conformidad con lo dispuesto por el art&iacute;culo 29, fracci&oacute;n IV, de la LIVA.
+                        La adquisici&oacute;n de "Paquetes de Viaje" con destino en el extranjero, que incluyan el servicio de transportaci&oacute;n a&eacute;rea iniciado en territorio nacional, , traslada el Impuesto al Valor Agregado a la tasa del 16%, &uacute;nicamente sobre la parte que represente el 25% de dicho medio de transporte.
+                        declara que:
+                        1.	Las fotograf&iacute;as mostradas en su portal de Internet son con fines representativos y no garantizan que a tu llegada, todo sea exactamente igual como aqu&iacute; se describe;
+                        2.	La categor&iacute;a de estrellas asignada a los hoteles, est&aacute; basada en la interpretaci&oacute;n de y puede diferir de las categor&iacute;as reportadas en otros lugares.
+                        3.	Las descripciones de los servicios de viaje son actualizadas por de manera constante pero no garantizan que todo ser&aacute; exactamente igual a tu llegada.
+                        4.	se reserva el derecho de rechazar a cualquier persona o cliente en el momento que considere necesario.
+                        5.	Cualquier reclamaci&oacute;n o notificaci&oacute;n por escrito en contra de , deber&aacute; ser recibida a m&aacute;s tardar con treinta (30) d&iacute;as despu&eacute;s de concluido el viaje.
+                        Deslinde de responsabilidad
+                        6.	no asumir&aacute; responsabilidad por ninguna reclamaci&oacute;n, costo o gasto producido por heridas personales o de terceras personas, accidentes o deceso, p&eacute;rdida o da&ntilde;os de objetos personales, falta de diversi&oacute;n, enojo, desilusi&oacute;n, angustia o frustraci&oacute;n (ya sea mental o f&iacute;sica) que resulte de las siguientes causas:
+                        7.	Actos u omisiones de cualquiera otra persona que no sea o sus empleados;
+                        8.	Enfermedad, robo, disputas laborales, huelgas, fallas mec&aacute;nicas, cuarentena, acciones gubernamentales, condiciones clim&aacute;ticas, o cualquier otra causa ajena al control directo de ;
+                        9.	Imposibilidad del cliente para viajar por no contar con los documentos requeridos tales como, pero no limitados a pasaportes, visas y certificados. En estos casos no aplican reembolsos.
+                        10.	Incumplimiento del cliente en seguir instrucciones incluyendo, pero no limitadas a horarios de salida de vuelos, hora y fecha de entrada y salida en hoteles, y pol&iacute;ticas de canje de cupones;
+                        11.	Cancelaci&oacute;n o cambio por cualquier raz&oacute;n de los servicios de viaje ofrecidos. se reserva el derecho de cancelar o cambiar los servicios publicados, pero se tratar&aacute; de sustituirlos con servicios similares. Si una reservaci&oacute;n debe ser cancelada, la responsabilidad de estar&aacute; limitada al reembolso de todo el dinero pagado por el cliente;
+                        12.	No aplican reembolsos totales en situaciones en las que el viaje tenga que ser cancelado, interrumpido o pospuesto por por razones que est&eacute;n fuera de su control (causas de fuerza mayor, tales como, pero no limitadas a, condiciones clim&aacute;ticas, huracanes, terremotos, huelgas, guerras, actos de terrorismo, etc.) y en los que las obligaciones contractuales de con sus proveedores no le permitan obtener reembolso de la suma pagada o a ser pagada al proveedor por cuenta del cliente. En estos casos, se reserva el derecho de retener un 10% del total de la cantidad pagada por la reservaci&oacute;n como gasto administrativo.
+                        13.	A pesar de que actualizamos las tarifas de manera constante, en casos remotos existe la posibilidad de que haya cambios en las tarifas sin previo aviso por contingencias o causas de fuerza mayor. En estos casos, es posible que el proveedor no tenga forma de actualizar r&aacute;pidamente las tarifas. hace revisiones peri&oacute;dicas donde es posible que haya diferencias entre el precio pagado por la reservaci&oacute;n y el precio requerido para usar el servicio. En caso de haber cambios en las tarifas, si &eacute;sta resulta en un precio menor, se cobrar&aacute; ese precio y se reembolsar&aacute; la diferencia. Si resulta en un precio mayor, uno de nuestros Asesores de Viaje se pondr&aacute; en contacto contigo y te informar&aacute; sobre el cambio. Si no est&aacute;s de acuerdo, te reembolsar&aacute; el 100% del monto pagado, pero no se hace responsable por reclamaciones o inconvenientes derivados del cambio de tarifas o la cancelaci&oacute;n de la reservaci&oacute;n.
+
+
+                    </h7>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+<section id="banner">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="principalCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carouselPrincipal carousel-inner">
+                    <div class="carousel-item active">
+                        <a href=" https://viajes.grupos.co/">
+                            <img class="carrousel d-block w-100" src="~/images/1.jpg" alt="First slide">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="carrousel d-block w-100" src="~/images/2.png" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <a href=" https://viajes.grupos.co/">
+                            <img class="carrousel d-block w-100" src="~/images/4.png" alt="Third slide">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href=" https://viajes.grupos.co/">
+                            <img class="carrousel d-block w-100" src="~/images/3.png" alt="Third slide">
+                        </a>
+                    </div>
+
+                    <div id="transporte" class="col-12 text-center">
+                        <ul>
+                            @*boton paquetes*@
+                            <li id="HotelVueloLi" style="cursor:pointer" onclick="prueba(3)">
+                                <img id="hotelvuelo" class="mediosTransporte" src="~/images/Hotel mas vuelo.png" />
+                                <label class="checkeable btnBorder textosTransporte" style="color:white; cursor:pointer">
+                                    <input id="check" type="checkbox" name="vuelo" />
+                                    Paquetes
+                                </label>
+                            </li>
+                            @*boton hotel*@
+                            <li id="HotelLi" onclick="prueba(2)">
+                                <img class="mediosTransporte" src="~/images/Hotel.png" />
+                                <label class="checkeable btnBorder textosTransporte" style="color:white; cursor:pointer">
+                                    <input id="check" type="checkbox" name="vuelo" />
+                                    Hotel
+                                </label>
+                            </li>
+                            @*boton vuelos*@
+                            <li id="VuelosLi" onclick="prueba(1)">
+                                <img id="vuelos" class="mediosTransporte" src="~/images/Vuelos.png" />
+                                <label class="checkeable btnBorder textosTransporte" style="color:white; cursor:pointer">
+                                    <input id="check" name="vuelo" />
+                                    Vuelos
+                                </label>
+                            </li>
+                            @*boton Translados*@
+                            <li id="TransladosLi" onclick="prueba(6)">
+                                <img id="trasl" class="mediosTransporte imagenTransporte" src="~/images/Transportes.png" />
+                                <label class="checkeable btnBorder textosTransporte" style="color:white; cursor:pointer">
+                                    <input id="check" type="checkbox" name="vuelo" />
+                                    Traslados
+                                </label>
+                            </li>
+                            @*boton actividades*@
+                            <li id="ActividadesLi" onclick="prueba(7)">
+                                <img class="mediosTransporte imagenTour" src="~/images/Tours.png" />
+                                <label class="checkeable btnBorder textosTransporte" style="color:white; cursor:pointer">
+                                    <input id="check" type="checkbox" name="vuelo" />
+                                    Tours
+                                </label>
+                            </li>
+                            @*boton autos*@
+                            <li id="AutoLi" onclick="prueba(4)">
+                                <img class="mediosTransporte" src="~/images/Autos.png" />
+                                <label class="checkeable btnBorder textosTransporte" style="color:white; cursor:pointer">
+                                    <input id="check" type="checkbox" name="vuelo" />
+                                    Autos
+                                </label>
+                            </li>
+                            @*boton crucero*@
+                            <li id="CruceroLi" onclick="prueba(5)">
+                                <img id="crucer" class="mediosTransporte" src="~/images/Crucero.png" />
+                                <label class="checkeable btnBorder textosTransporte" style="color:white; cursor:pointer">
+                                    <input id="check" type="checkbox" name="vuelo" />
+                                    Cruceros
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="ptw-container" class="producto ptw-horizontal-search col-12">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="cuotas">
+    <div class="franquicias">
+        <h2 id="uno">Puedes pagar con</h2>
+    </div>
+    <div id="pagos">
+        <img src="~/Images/Visa.png" alt="">
+        <img src="~/Images/Master.png" alt="">
+        <img src="~/Images/Diners.png" alt="">
+        <img src="~/Images/American.png" alt="">
+        <img src="~/Images/Exito.png" alt="">
+        <img src="~/Images/Falabella.png" alt="">
+        <img src="~/Images/pse.png" alt="">
+    </div>
+    <div class="franquicias">
+        <h2 id="dos">hasta 36 cuotas</h2>
+    </div>
+</section>
+
+<section class="columnas">
+    <div class="columna1">
+        <img id="Imgcol1" src="~/Images/1s.jpg" alt="" width="255">
+        <h1 class="title1">Hotel costa del sol</h1>
+        <hr>
+        <h2 class="price1">Precio desde</h2>
+        <h3 class="Valor1">$784.900* COP</h3>
+        <h4>2 Personas / 4 días, 3 noches</h4>
+        <hr>
+        <p id="Condiciones">Habitación estándar para dos personas, incluye desayuno, almuerzo y cena. Precio de referencia 13 de enero al 15 de enero de 2020</p>
+        <button class="button1 " type="button" name="button">Reservar</button>
+    </div>
+    <div class="columna2">
+        <img id="Imgcol2" src="~/Images/2s.jpg" alt="" width="255">
+        <h1 class="title2">Hotel Portobelo convention center</h1>
+        <hr>
+        <h2 class="price2">Precio desde</h2>
+        <h3 class="Valor2">$967.300* COP</h3>
+        <h4>2 Personas / 4 días, 3 noches / 15% dcto.</h4>
+        <hr>
+        <p id="Condiciones">Habitación estándar, incluye desayuno y cena. Precio referencia 16 de enero al 18 de enero del 2020</p>
+        <button class="button2 " type="button" name="button">Reservar</button>
+    </div>
+    <div class="columna3">
+        <img id="Imgcol3" src="~/Images/3s.jpg" alt="" width="255">
+        <h1 class="title3">Santorini hotel & resort</h1>
+        <hr>
+        <h2 class="price3">Precio desde</h2>
+        <h3 class="Valor3">$872.560* COP</h3>
+        <h4>2 Personas / 4 días, 3 noches / 30% dcto.</h4>
+        <hr>
+        <p id="Condiciones">Habitación estándar. Incluye desayuno y cena. Precio referencia 16 de enero al 19 de enero de 2020. Aplican términos y condiciones</p>
+        <button class="button3 " type="button" name="button">Reservar</button>
+    </div>
+</section>
+
+
+<!-- Espacio del corrusel de los vuelos pendiente por animar, ver de referencia la página de despegar -->
+
+<section class="Slider">
+    <h3 id="Descubre">Descubre las mejores ofertas en vuelos</h3>
+    <div class="Container">
+        <div class="info-vuelos">
+            <img id="destinos" src="~/Images/1card.jpg" alt="">
+        </div>
+        <div class="info-vuelos">
+            <img src="~/Images/2card.jpg" alt="">
+        </div>
+        <div class="info-vuelos">
+            <img src="~/Images/3card.jpg" alt="">
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+
+<section class="footer">
+    <div class="imgfooter">
+        <img src="~/Images/Gruposlogan.svg" alt="">
+    </div>
+    <div class="copy">
+        <p>©Copyright ; grupos.co | Turismo Agencia de viajes. Todos los derechos reservados | <a href="#">Términos y condiciones</a> | <a href="#" target="_blank">RNT</a> | Contacto: operaciones@grupos.co</p>
+    </div>
+    <div class="contacto">
+        <h6>  Ventas  <img src="~/Images/Auriculares.png" alt="">  01 800 752 23 03</h6>
+        <h6>  Chat  <img src="~/Images/Whatsapp_bl.png" alt="">  314 572 31 98</h6>
+    </div>
+    <div class="siguenos">
+        <h6>Síguenos en nuestras redes</h6>
+        <div class="sociales">
+            <a href="https://www.facebook.com/gruposco-448478105889532/?ref=br_rs" target="_blank"><img class="facebookfooter" src="~/images/Facebook bl.png" /></a>
+            <a href="https://www.instagram.com/grupos.co/" target="_blank"><img class="instagram" src="~/images/Instagram bl.png" /></a>
+            <a href="https://www.linkedin.com/company/grupos-co" target="_blank"><img class="linkedin" src="~/images/Linkedin bl.png" /></a>
+        </div>
+    </div>
+    <div class="container-icons">
+        <a href="tel:018007522303">
+            <div class="row-icon icon1">
+                <h4>Ventas 01 800 752 23 03</h4><img src="~/Images/Iconos_aurmor.svg" alt="">
+
+            </div>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=573145723198text=Hola!%20Necesito%20información%20sobre%20un%20destino!" target="_blank">
+            <div class="row-icon icon2">
+                <h4>Whatsapp 314 572 31 98</h4>
+                <img src="~/Images/Iconos_whvr.svg" alt="">
+            </div>
+        </a>
+        <h2 class="iconaur">
+            <img src="~/Images/Aurmag.svg" alt="">
+        </h2>
+    </div>
+</section>
+<div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+</div>
+
