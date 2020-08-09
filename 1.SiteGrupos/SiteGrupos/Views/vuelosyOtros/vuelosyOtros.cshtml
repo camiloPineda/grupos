@@ -47,9 +47,9 @@
             <ul>
                 <li> <a href="tel:018007522303">Ventas 01 800 752 23 03</a></li>
                 <li> <a href="https://api.whatsapp.com/send?phone=573145723198text=Hola!%20Necesito%20información%20sobre%20un%20destino!" target="_blank">Whatsapp 314 572 31 98</a></li>
-                <li><a href="#"><span class="icon-earth textos"></span>Términos y Condiciones</a></li>
-                <li><a href="#"><span class="icon-earth textos"></span>Otros</a></li>
-                <li><a href='@Url.Action("Index", "Grupos")'><span class="icon-earth textos"></span>Cerrar Sesión</a></li>
+                <li><a href="#"><span class="icon-earth"></span>Términos y Condiciones</a></li>
+                <li><a href="#"><span class="icon-earth"></span>Otros</a></li>
+                <li><a href='@Url.Action("Index", "Grupos")'><span class="icon-earth"></span>Cerrar Sesión</a></li>
             </ul>
         </nav>
     </div>
@@ -60,20 +60,20 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-6 text-center mt-4 mb-3">
-                    <div class="mb-3"><span class="textos">VUELOS REGIONALES</span></div>
+                    <div class="mb-3"><span>VUELOS REGIONALES</span></div>
                     <button class="botonesmenu shrink">
                         <i class="imgmenu fa fa-plane"></i>
                     </button>
-                    <div class="mt-3 mb-2"><span class="textos">GCA AIRLINES | SATENA | EASY FLY</span></div>
+                    <div class="mt-3 mb-2"><span>GCA AIRLINES | SATENA | EASY FLY</span></div>
                     <div><button class="ingresar btn" id="btnVuelos">Ingresar</button></div>
                 </div>
 
                 <div class="col-6 text-center mt-4 mb-3">
-                    <div class="mb-3"><span class="textos">TODOS LOS SERVICIOS</span></div>
+                    <div class="mb-3"><span>TODOS LOS SERVICIOS</span></div>
                     <button class="botonesmenu shrink">
                         <i class="imgmenubox fa fa-archive"></i>
                     </button>
-                    <div class="mt-3 mb-2"><span class="textos">PAQUETES | CRUCEROS | HOTELES | TOURS</span></div>
+                    <div class="mt-3 mb-2"><span>PAQUETES | CRUCEROS | HOTELES | TOURS</span></div>
                     <div><button class="ingresar btn">Ingresar</button></div>
                 </div>
             </div>
@@ -83,6 +83,9 @@
 
 
 <section id="vuelos" style="display:none">
+    <div class="spin" id="spinnerVuelos" style="display:block">
+        <div class="preloader"></div>
+    </div>
     <div class="card">
         <div class="col-12">
             <div class="row pt-4 justify-content-center">
@@ -102,14 +105,14 @@
             <div id="FormIdayVuelta" class="col-12" style="display:block">
                 <div class="row justify-content-center">
                     <div class="col-3">
-                        <label class="col-12" for="origen1">Origen:</label>
-                        <select id="origen1" class="mi-selector">
+                        <label for="origen1">Origen:</label>
+                        <select id="origen1" class="form-control">
                             <option value="SELECCIONAR">Seleccionar</option>
                         </select>
                     </div>
                     <div class="col-3">
-                        <label class="col-12" for="destino1">Destino:</label>
-                        <select id="destino1" class="mi-selector">
+                        <label for="destino1">Destino:</label>
+                        <select id="destino1" class="form-control">
                             <option value="SELECCIONAR">Seleccionar</option>
                         </select>
                     </div>
@@ -140,16 +143,7 @@
                     </div>
                     <div class="col-3">
                         <label for="ninos1">Niños:</label>
-                        @*<input type="number" id="ninos1" class="form-control" value="0">*@
-                        <select id="niños1" class="form-control">
-                            <option value="0">0 Niños</option>
-                            <option value="1">1 Niños</option>
-                            <option value="2">2 Niños</option>
-                            <option value="3">3 Niños</option>
-                            <option value="4">4 Niños</option>
-                            <option value="5">5 Niños</option>
-                            <option value="6">6 Niños</option>
-                        </select>
+                        <input type="number" id="ninos1" class="form-control" value="0">
                     </div>
                     <div class="col-3">
 
@@ -189,13 +183,13 @@
                         <div class="col-1"> <p class="numeroVuelo">VUELO 1</p></div>
                         <div class="col-3">
                             <label for="origen3">Origen:</label>
-                            <select id="origen3" class="form-control mi-selector">
+                            <select id="origen3" class="form-control">
                                 <option value="SELECCIONAR">Seleccionar</option>
                             </select>
                         </div>
                         <div class="col-3">
                             <label for="destino3">Destino:</label>
-                            <select id="destino3" class="form-control mi-selector">
+                            <select id="destino3" class="form-control">
                                 <option value="SELECCIONAR">Seleccionar</option>
                             </select>
                         </div>
@@ -276,15 +270,15 @@
             </div>
 
             <div class="infofooter text-center mb-3 mt-4 col-12">
-                <span class="textos">Grupos.co.S.A.S NIT. 901.278.022.4-Colombia, Teléfono: 01 8007522303.</span>
+                <span>Grupos.co.S.A.S NIT. 901.278.022.4-Colombia, Teléfono: 01 8007522303.</span>
                 <br />
-                <span class="textos">Todos los derechos reservados. Registro Nacional de Turismo (RTN) No. 72012</span>
+                <span>Todos los derechos reservados. Registro Nacional de Turismo (RTN) No. 72012</span>
             </div>
 
             <div class="contacto col-lg-12">
                 <ul>
                     <li>
-                        <span class="textos"> Ventas 01 800 752 23 03</span>
+                        <span> Ventas 01 800 752 23 03</span>
                         <img src="~/Images/Auriculares.png" alt="" class="auricular">
                     </li>
                     <li><a href="https://www.facebook.com/gruposco-448478105889532/?ref=br_rs" target="_blank"><img class="facebookfooter" src="~/images/Facebook bl.png" /></a></li>
@@ -296,7 +290,7 @@
             </div>
 
             <div class="siguenos text-center col-12">
-                <span class="textos">
+                <span>
                     En el desarrollo de lo dispuesto en el artículo 17 de la ley 679 de 2001, la agencia rechaza la explotación, la pornografía, el turismo sexual y demás formas de abuso sexual con menores, que son <br />
                     sacionadas penal y administrativamente conforme a las leyes colombianas.
                 </span>
@@ -310,7 +304,7 @@
         <div class="modal-content contentTerminos">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span class="textos" aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body text-center">

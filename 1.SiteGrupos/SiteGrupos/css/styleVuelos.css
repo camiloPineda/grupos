@@ -37,26 +37,6 @@
     src: url('../fonts/gilroybold.ttf') format('truetype');
 }
 
-/*Seccion Busqueda select filtros*/
-
-.select2-container {
-    width: 100% !important;
-}
-
-.select2-container .select2-selection--single {
-    height: 35px;
-}
-
-.select2-container .select2-selection--single .select2-selection__rendered {
-    margin-top: 2px;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow b {
-    margin-top: 1px;
-}
-
-    /*------------------------------------------------------------- */
-
 .vuelosOption {
 padding: 5px !important;
 }
@@ -323,7 +303,7 @@ header nav ul li a:hover {
     right: 0px;
 }
 
-.textos {
+span {
     font-family: GilroyExtraBold;
     color: #6101d1;
     font-weight: 600;

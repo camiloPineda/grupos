@@ -1,4 +1,5 @@
 
+
 function myFunction() {
     document.getElementById("myDropdown").style.display = 'block';
 }
@@ -127,17 +128,13 @@ function prueba(valor) {
 
 $(document).ready(function () {
 
-
-    $('.mi-selector').select2();
-
-
     $('#fechaIda1').val(new Date());
 
     $('#fechaRegreso1').val(new Date());
 
-
+   
     $('#btnIdayVuelta').click(function () {
-
+        $('#spinnerVuelos').show();
         var metodo = 'IdaRegreso';
         var fechaIda = $('#fechaIda1').val();
         var fechaRegreso = $('#fechaRegreso1').val();
@@ -159,9 +156,11 @@ $(document).ready(function () {
                 'cabina': cabina,
                 'adultos': adultos,
                 'ninos': ninos
-            },
+            },       
             success: function (respuesta) {
+                $('#spinnerVuelos').hide();
                 debugger;
+                respuesta = respuesta.replace("<br />< b > Deprecated</b >: Methods with the same name as their class will not be constructors in a future version of PHP; connectionServer has a deprecated constructor in <b>C:\\xampp\\htdocs\\gruposPoint\\connection.php</b> on line < b > 20</b > <br />", "");
                 console.log(respuesta)
                 $.ajax({
                     url: '/vuelosyOtros/InterpretarRespuesta',
@@ -172,9 +171,11 @@ $(document).ready(function () {
                 });
             },
             error: function (data) {
+                $('#spinnerVuelos').hide();
                 alert('error');
             },
             failure: function (r) {
+                $('#spinnerVuelos').hide();
                 alert('fallo');
             }
         });
@@ -194,7 +195,7 @@ $(document).ready(function () {
         $('#Multidestino').prop("checked", false);
         $('#FormIdayVuelta').css("display", "block");
         $('#FormSencillo').css("display", "none");
-        $('#FormMultidestino').css("display", "none");
+        $('#FormMultidestino').css("display", "none");        
     });
 
     $('#Sencillo').click(function () {
@@ -221,7 +222,7 @@ $(document).ready(function () {
             type: 'get',
             dataType: 'json',
             crossDomain: true,
-            success: function (ciudades) {
+            success: function (ciudades) {    
                 $('#spinner').hide();
                 // VACIAMOS EL DropDownList
                 $("#origen1").empty();
@@ -938,7 +939,7 @@ $(document).ready(function () {
         }
     };
 
-    $('#password').keypress(function (event) {
+     $('#password').keypress(function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             Login();
@@ -1106,7 +1107,7 @@ $(document).ready(function () {
     });
 
     $('#btnLogin').click(function () {
-        Login();
+        Login(); 
     });
 
     function isValidEmailAddress(emailAddress) {
