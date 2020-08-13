@@ -64,7 +64,7 @@ namespace SiteGrupos.Controllers
         {
             return Json(new BCities().ListadoCiudades(), JsonRequestBehavior.AllowGet);
         }
-        public void InterpretarRespuesta(dynamic respuesta)
+        public ActionResult InterpretarRespuesta(dynamic respuesta)
         {
             var data = respuesta[0];
             JObject resultado = JObject.Parse(data);
@@ -83,58 +83,71 @@ namespace SiteGrupos.Controllers
                     {
                         OriginDestinationOption ListadoOpcionVuelo = new OriginDestinationOption();
                         List<FlightSegment> ListadoSegmentosVuelos = new List<FlightSegment>();
-                        FlightSegment nuevoSegmento = new FlightSegment();
                         Information.DepartureDateTime = result["DepartureDateTime"].ToString();
                         Information.OriginLocation = result["OriginLocation"].ToString();
                         Information.DestinationLocation = result["DestinationLocation"].ToString();
 
                         dynamic segmentos = opcion.ToList();
-                        foreach (var segmento in segmentos)
+                        //varios segmentos de vuelo
+                        for (int v = 0; v < segmentos[0].Count; v++)
                         {
-                            var vuelo = segmento["FlightSegment"].Children();
+                            var nivelsuperior = segmentos[0];
+                            var vuelo = nivelsuperior[v]["FlightSegment"];
                             int i = 0;
-                            nuevoSegmento.BookingClassAvailList = new List<BookingClassAvail>();
+                            List<BookingClassAvail> BookingClassAvailList = new List<BookingClassAvail>();
+                            var DepartureDateTime = string.Empty;
+                            var ArrivalDateTime = string.Empty;
+                            var StopQuantity = string.Empty;
+                            var FlightNumber = string.Empty;
+                            var JourneyDuration = string.Empty;
+                            var DepartureAirport = string.Empty;
+                            var ArrivalAirport = string.Empty;
+                            var Equipment = string.Empty;
+                            var MarketingAirline = string.Empty;
+                            var Meal = string.Empty;
+                            var RPH = string.Empty;
+                            var CabinType = string.Empty;
                             foreach (var item in vuelo)
                             {
                                 if (i == 0)//Datos del vuelo
                                 {
-                                    nuevoSegmento.DepartureDateTime = item.First["DepartureDateTime"].Value;
-                                    nuevoSegmento.ArrivalDateTime = item.First["ArrivalDateTime"].Value;
-                                    nuevoSegmento.StopQuantity = item.First["StopQuantity"].Value;
-                                    nuevoSegmento.FlightNumber = item.First["FlightNumber"].Value;
-                                    nuevoSegmento.JourneyDuration = item.First["JourneyDuration"].Value;
+                                    DepartureDateTime = item.First["DepartureDateTime"].Value;
+                                    ArrivalDateTime = item.First["ArrivalDateTime"].Value;
+                                    StopQuantity = item.First["StopQuantity"].Value;
+                                    FlightNumber = item.First["FlightNumber"].Value;
+                                    JourneyDuration = item.First["JourneyDuration"].Value;
 
                                 }
                                 if (i == 1)
                                 {
                                     var nivel1 = item.First["@attributes"];
-                                    nuevoSegmento.DepartureAirport = nivel1["LocationCode"].Value;
+                                    DepartureAirport = nivel1["LocationCode"].Value;
                                 }
                                 if (i == 2)
                                 {
                                     var nivel1 = item.First["@attributes"];
-                                    nuevoSegmento.ArrivalAirport = nivel1["LocationCode"].Value;
+                                    ArrivalAirport = nivel1["LocationCode"].Value;
                                 }
                                 if (i == 3)
                                 {
                                     var nivel1 = item.First["@attributes"];
-                                    nuevoSegmento.Equipment = nivel1["AirEquipType"].Value;
+                                    Equipment = nivel1["AirEquipType"].Value;
                                 }
                                 if (i == 4)
                                 {
                                     var nivel1 = item.First["@attributes"];
-                                    nuevoSegmento.MarketingAirline = nivel1["CompanyShortName"].Value;
+                                    MarketingAirline = nivel1["CompanyShortName"].Value;
                                 }
                                 if (i == 5)
                                 {
                                     var nivel1 = item.First["@attributes"];
-                                    nuevoSegmento.Meal = nivel1["MealCode"].Value;
+                                    Meal = nivel1["MealCode"].Value;
                                 }
                                 if (i == 6)
                                 {
                                     var nivel1 = item.First["@attributes"];
-                                    nuevoSegmento.CabinType = nivel1["CabinType"].Value;
-                                    nuevoSegmento.RPH = nivel1["RPH"].Value;
+                                    CabinType = nivel1["CabinType"].Value;
+                                    RPH = nivel1["RPH"].Value;
                                 }
                                 if (i == 7)
                                 {
@@ -145,20 +158,39 @@ namespace SiteGrupos.Controllers
                                         var nivel2 = nivel1[x]["@attributes"];
                                         var ResBookDesigCode = nivel2["ResBookDesigCode"].Value;
                                         var ResBookDesigQuantity = nivel2["ResBookDesigQuantity"].Value;
-                                        var RPH = nivel2["RPH"].Value;
+                                        var RPHBooking = nivel2["RPH"].Value;
                                         BookingClassAvail bookingClassAvail = new BookingClassAvail
                                         {
                                             ResBookDesigCode = ResBookDesigCode,
                                             ResBookDesigQuantity = ResBookDesigQuantity,
-                                            RPH = RPH
+                                            RPHBooking = RPHBooking
                                         };
-                                        nuevoSegmento.BookingClassAvailList.Add(bookingClassAvail);
+                                        BookingClassAvailList.Add(bookingClassAvail);
                                     }
                                 }
                                 i++;
                             }
+                            FlightSegment nuevoSegmento = new FlightSegment
+                            {
+                                DepartureDateTime = DepartureDateTime,
+                                ArrivalDateTime = ArrivalDateTime,
+                                StopQuantity = StopQuantity,
+                                FlightNumber = FlightNumber,
+                                JourneyDuration = JourneyDuration,
+                                DepartureAirport = DepartureAirport,
+                                ArrivalAirport = ArrivalAirport,
+                                Equipment = Equipment,
+                                MarketingAirline = MarketingAirline,
+                                Meal = Meal,
+                                RPH = RPH,
+                                CabinType = CabinType,
+                                BookingClassAvailList = BookingClassAvailList
+
+                            };
                             ListadoSegmentosVuelos.Add(nuevoSegmento);
                         }
+
+
                         ListadoOpcionVuelo.ListFlightSegment = ListadoSegmentosVuelos;
                         Information.OriginDestinationOptions = ListadoOpcionVuelo;
                         InformationList.Add(Information);
@@ -173,18 +205,8 @@ namespace SiteGrupos.Controllers
                     }
                 }
             }
+            return Json(InformationList);
 
-            //Bloque Ida
-            ViewBag.DepartureDateTimeIda = InformationList[0].DepartureDateTime;
-            ViewBag.OriginLocationIda = InformationList[0].OriginLocation;
-            ViewBag.DestinationLocationIda = InformationList[0].DestinationLocation;
-            ViewBag.OriginDestinationOptionsIda = InformationList[0].OriginDestinationOptions;
-
-            //Bloque Regreso
-            ViewBag.DepartureDateTimeRegreso = InformationList[1].DepartureDateTime;
-            ViewBag.OriginLocationRegreso = InformationList[1].OriginLocation;
-            ViewBag.DestinationLocationRegreso = InformationList[1].DestinationLocation;
-            ViewBag.OriginDestinationOptionsRegreso = InformationList[1].OriginDestinationOptions;
         }
     }
 }

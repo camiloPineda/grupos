@@ -1,24 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="GruposModelStoreContainer" CdmEntityContainer="ctx_grupos">
-    <EntitySetMapping Name="Agency">
-      <EntityTypeMapping TypeName="GruposModel.Agency">
-        <MappingFragment StoreEntitySet="Agency">
-          <ScalarProperty Name="agencyId" ColumnName="agencyId" />
-          <ScalarProperty Name="documentType" ColumnName="documentType" />
-          <ScalarProperty Name="agencyName" ColumnName="agencyName" />
-          <ScalarProperty Name="contactType" ColumnName="contactType" />
-          <ScalarProperty Name="contactName" ColumnName="contactName" />
-          <ScalarProperty Name="cityName" ColumnName="cityName" />
-          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
-          <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
-          <ScalarProperty Name="terminos" ColumnName="terminos" />
-          <ScalarProperty Name="userName" ColumnName="userName" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="status" ColumnName="status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Cities">
       <EntityTypeMapping TypeName="GruposModel.Cities">
         <MappingFragment StoreEntitySet="Cities">
@@ -26,6 +8,25 @@
           <ScalarProperty Name="City_Code" ColumnName="City_Code" />
           <ScalarProperty Name="City_Name" ColumnName="City_Name" />
           <ScalarProperty Name="City_Status" ColumnName="City_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agency">
+      <EntityTypeMapping TypeName="GruposModel.Agency">
+        <MappingFragment StoreEntitySet="Agency">
+          <ScalarProperty Name="dateCreate" ColumnName="dateCreate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="terminos" ColumnName="terminos" />
+          <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="cityName" ColumnName="cityName" />
+          <ScalarProperty Name="contactName" ColumnName="contactName" />
+          <ScalarProperty Name="contactType" ColumnName="contactType" />
+          <ScalarProperty Name="agencyName" ColumnName="agencyName" />
+          <ScalarProperty Name="documentType" ColumnName="documentType" />
+          <ScalarProperty Name="agencyId" ColumnName="agencyId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

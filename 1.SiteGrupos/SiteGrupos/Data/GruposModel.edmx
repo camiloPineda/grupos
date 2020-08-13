@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GruposModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GruposModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Agency">
           <Key>
             <PropertyRef Name="agencyId" />
@@ -21,6 +21,7 @@
           <Property Name="userName" Type="varchar" MaxLength="100" />
           <Property Name="password" Type="varchar" MaxLength="100" />
           <Property Name="status" Type="bit" />
+          <Property Name="dateCreate" Type="datetime" />
         </EntityType>
         <EntityType Name="Cities">
           <Key>
@@ -35,11 +36,23 @@
           <EntitySet Name="Agency" EntityType="Self.Agency" Schema="grupos1_adminDb" store:Type="Tables" />
           <EntitySet Name="Cities" EntityType="Self.Cities" Schema="grupos1_adminDb" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GruposModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="Id_City" />
+          </Key>
+          <Property Name="Id_City" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="City_Code" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="City_Name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="City_Status" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="ctx_grupos" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cities" EntityType="Self.Cities" />
+          <EntitySet Name="Agency" EntityType="GruposModel.Agency" />
+        </EntityContainer>
         <EntityType Name="Agency">
           <Key>
             <PropertyRef Name="agencyId" />
@@ -56,44 +69,14 @@
           <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="status" Type="Boolean" />
+          <Property Name="dateCreate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="Cities">
-          <Key>
-            <PropertyRef Name="Id_City" />
-          </Key>
-          <Property Name="Id_City" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="City_Code" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="City_Name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="City_Status" Type="Boolean" />
-        </EntityType>
-        <EntityContainer Name="ctx_grupos" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Agency" EntityType="Self.Agency" />
-          <EntitySet Name="Cities" EntityType="Self.Cities" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GruposModelStoreContainer" CdmEntityContainer="ctx_grupos">
-          <EntitySetMapping Name="Agency">
-            <EntityTypeMapping TypeName="GruposModel.Agency">
-              <MappingFragment StoreEntitySet="Agency">
-                <ScalarProperty Name="agencyId" ColumnName="agencyId" />
-                <ScalarProperty Name="documentType" ColumnName="documentType" />
-                <ScalarProperty Name="agencyName" ColumnName="agencyName" />
-                <ScalarProperty Name="contactType" ColumnName="contactType" />
-                <ScalarProperty Name="contactName" ColumnName="contactName" />
-                <ScalarProperty Name="cityName" ColumnName="cityName" />
-                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
-                <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
-                <ScalarProperty Name="terminos" ColumnName="terminos" />
-                <ScalarProperty Name="userName" ColumnName="userName" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="status" ColumnName="status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Cities">
             <EntityTypeMapping TypeName="GruposModel.Cities">
               <MappingFragment StoreEntitySet="Cities">
@@ -101,6 +84,25 @@
                 <ScalarProperty Name="City_Code" ColumnName="City_Code" />
                 <ScalarProperty Name="City_Name" ColumnName="City_Name" />
                 <ScalarProperty Name="City_Status" ColumnName="City_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agency">
+            <EntityTypeMapping TypeName="GruposModel.Agency">
+              <MappingFragment StoreEntitySet="Agency">
+                <ScalarProperty Name="dateCreate" ColumnName="dateCreate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="terminos" ColumnName="terminos" />
+                <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="cityName" ColumnName="cityName" />
+                <ScalarProperty Name="contactName" ColumnName="contactName" />
+                <ScalarProperty Name="contactType" ColumnName="contactType" />
+                <ScalarProperty Name="agencyName" ColumnName="agencyName" />
+                <ScalarProperty Name="documentType" ColumnName="documentType" />
+                <ScalarProperty Name="agencyId" ColumnName="agencyId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

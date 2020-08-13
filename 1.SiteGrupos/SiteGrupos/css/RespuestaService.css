@@ -1,0 +1,103 @@
+﻿@font-face {
+    font-family: 'gilroyregular';
+    src: url('../fonts/gilroyregular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'gilroybold';
+    src: url('../fonts/gilroybold.ttf') format('truetype');
+}
+
+body {
+}
+
+.table {
+    width: 100%;
+}
+
+    .table thead th {
+        vertical-align: inherit;
+        font-weight: 400;
+        font-family: 'gilroyregular';
+        padding: 0;
+    }
+
+    .table td {
+        font-size: 13px;
+        font-family: 'gilroyregular';
+        vertical-align: inherit;
+    }
+
+table td:first-child {
+    width: 100px;
+}
+
+table td:nth-child(2) {
+    width: 200px;
+}
+
+table td:nth-child(3) {
+    width: 100px;
+}
+
+table td:nth-child(4) {
+    width: 110px;
+}
+
+table td:nth-child(5) {
+    text-align: center;
+    width: 150px;
+}
+
+table td:nth-child(6) {
+    text-align: center;
+    width: 150px;
+}
+
+table td:nth-child(7) {
+    text-align: center;
+    width: 150px;
+}
+
+table td:nth-child(8) {
+    text-align: center;
+    width: 150px;
+}
+
+table td:nth-child(9) {
+    text-align: center;
+    width: 150px;
+}
+
+
+/*CSS param los encabezados defs label tabla*/
+table th:nth-child(5) {
+    text-align: center;
+}
+
+table th:nth-child(6) {
+    text-align: center;
+}
+
+table th:nth-child(7) {
+    text-align: center;
+}
+
+table th:nth-child(8) {
+    text-align: center;
+}
+
+table th:nth-child(9) {
+    text-align: center;
+}
+
+p {
+    margin: 0;
+}
+
+.reservarAhora {
+    background: #6101d1;
+    color: white;
+    padding: 5px 10px 5px;
+    font-family: GilroyBold;    
+}

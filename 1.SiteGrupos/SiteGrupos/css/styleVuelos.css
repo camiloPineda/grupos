@@ -37,8 +37,28 @@
     src: url('../fonts/gilroybold.ttf') format('truetype');
 }
 
+.select2-container {
+    width: 100% !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 35px;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    margin-top: 2px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    margin-top: 1px;
+}
+
+.form-control {
+    max-width: 100% !important;
+}
+
 .vuelosOption {
-padding: 5px !important;
+    padding: 5px !important;
 }
 .buscarVuelos {
     background: #6101d1;
@@ -231,6 +251,7 @@ header nav ul li a:hover {
 .redes {
     background: rgba(219, 194, 255, 0.2);
     height: 35px;
+    margin-top: 11px;
 }
 
 .imgRedes {
@@ -303,7 +324,7 @@ header nav ul li a:hover {
     right: 0px;
 }
 
-span {
+.textos {
     font-family: GilroyExtraBold;
     color: #6101d1;
     font-weight: 600;

@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\jsmartinga.NH\Documents\2.Otros Proyectos\1.SiteGrupos\SiteGrupos\Data\GruposModel.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\camil\OneDrive\Documents\Grupos\Git_Grupos\grupos\1.SiteGrupos\SiteGrupos\Data\GruposModel.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

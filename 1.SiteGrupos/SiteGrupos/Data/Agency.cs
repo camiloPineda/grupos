@@ -26,5 +26,6 @@ namespace SiteGrupos.Data
         public string userName { get; set; }
         public string password { get; set; }
         public Nullable<bool> status { get; set; }
+        public Nullable<System.DateTime> dateCreate { get; set; }
     }
 }

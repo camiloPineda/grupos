@@ -14,5 +14,6 @@ namespace SiteGrupos
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+
     }
 }

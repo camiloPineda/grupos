@@ -16,6 +16,7 @@
     <Property Name="userName" Type="varchar" MaxLength="100" />
     <Property Name="password" Type="varchar" MaxLength="100" />
     <Property Name="status" Type="bit" />
+    <Property Name="dateCreate" Type="datetime" />
   </EntityType>
   <EntityType Name="Cities">
     <Key>

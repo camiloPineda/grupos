@@ -1,5 +1,6 @@
 ﻿<link href="~/css/styleVuelos.css" rel="stylesheet" type="text/css" />
 <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="~/css/RespuestaService.css" rel="stylesheet" type="text/css" />
 <script src="~/Scripts/panel.js" type="text/javascript"></script>
 
 
@@ -60,20 +61,20 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-6 text-center mt-4 mb-3">
-                    <div class="mb-3"><span>VUELOS REGIONALES</span></div>
+                    <div class="mb-3"><span class="textos">VUELOS REGIONALES</span></div>
                     <button class="botonesmenu shrink">
                         <i class="imgmenu fa fa-plane"></i>
                     </button>
-                    <div class="mt-3 mb-2"><span>GCA AIRLINES | SATENA | EASY FLY</span></div>
+                    <div class="mt-3 mb-2"><span class="textos">GCA AIRLINES | SATENA | EASY FLY</span></div>
                     <div><button class="ingresar btn" id="btnVuelos">Ingresar</button></div>
                 </div>
 
                 <div class="col-6 text-center mt-4 mb-3">
-                    <div class="mb-3"><span>TODOS LOS SERVICIOS</span></div>
+                    <div class="mb-3"><span class="textos">TODOS LOS SERVICIOS</span></div>
                     <button class="botonesmenu shrink">
                         <i class="imgmenubox fa fa-archive"></i>
                     </button>
-                    <div class="mt-3 mb-2"><span>PAQUETES | CRUCEROS | HOTELES | TOURS</span></div>
+                    <div class="mt-3 mb-2"><span class="textos">PAQUETES | CRUCEROS | HOTELES | TOURS</span></div>
                     <div><button class="ingresar btn">Ingresar</button></div>
                 </div>
             </div>
@@ -106,13 +107,13 @@
                 <div class="row justify-content-center">
                     <div class="col-3">
                         <label for="origen1">Origen:</label>
-                        <select id="origen1" class="form-control">
+                        <select id="origen1" class="mi-selector">
                             <option value="SELECCIONAR">Seleccionar</option>
                         </select>
                     </div>
                     <div class="col-3">
                         <label for="destino1">Destino:</label>
-                        <select id="destino1" class="form-control">
+                        <select id="destino1" class="mi-selector">
                             <option value="SELECCIONAR">Seleccionar</option>
                         </select>
                     </div>
@@ -223,8 +224,32 @@
                     </div>
                 </div>
             </div>
-            <div style="display:none" id="divResultados">
+            <div class="col-12" style="display:none" id="divResultados">
+                <div class="text-center pt-4 pb-4"><h4>INFORMACIÓN DE VUELOS</h4></div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10" style="overflow-x:auto">
+                        <table class="table" id="TableIda">
+                            <thead class="thead-light">
 
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+                        <table class="table" id="TableRegreso">
+                            <thead class="thead-light">
+
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="text-right pb-4">
+                            <button class="btn reservarAhora">RESERVAR AHORA</button>
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
             </div>
         </div>
     </div>

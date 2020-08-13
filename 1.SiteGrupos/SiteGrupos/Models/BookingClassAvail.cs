@@ -10,5 +10,6 @@ namespace SiteGrupos.Models
         public string ResBookDesigCode { get; set; }
         public string ResBookDesigQuantity { get; set; }
         public string RPH { get; set; }
+        public string RPHBooking { get; set; }
     }
 }

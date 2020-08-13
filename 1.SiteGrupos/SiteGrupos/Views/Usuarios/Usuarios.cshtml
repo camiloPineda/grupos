@@ -1,0 +1,71 @@
+﻿<script src="~/Scripts/panel.js" type="text/javascript"></script>
+<link href="~/css/Usuarios.css" rel="stylesheet" type="text/css" />
+<link href="~/css/styleVuelos.css" rel="stylesheet" type="text/css" />
+
+<header style="padding-top:0px;">
+    <div class="Container">
+        <div class="submenu col-12">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 text-left">
+                    <p class="userAut"><strong>Bienvenido:</strong> @ViewBag.userName</p>
+                </div>
+
+                <div class="salir col-6 ">
+                    <a class="cerrar" href='@Url.Action("cerrar", "vuelosyOtros")'>
+                        <i class="exit fa fa-sign-out"></i>
+                        Cerrar Sesión
+                    </a>
+                </div>
+
+                <div class="redes col-12">
+                    <ul>
+                        <li><button class="btn_redes" onclick="window.open('https://www.facebook.com/gruposco-448478105889532/?ref=br_rs','_blank');" target="_blank"><img class="imgRedesFace" src="~/Images/Facebook1.png" /></button></li>
+                        <li><button class="btn_redes" onclick="window.open('https://www.instagram.com/grupos.co/','_blank');" target="_blank"><img class="imgRedes" src="~/Images/Instagram1.png" /></button></li>
+                        <li><button class="btn_redes" onclick="window.open('https://www.linkedin.com/company/grupos-co','_blank');" target="_blank"><img class="imgRedes" src="~/Images/Linkedin1.png" /></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="Containerlogo">
+            <div class="Containerlogo_img" style="width:280px">
+                <img src="~/Images/LogosloganM.png" alt="">
+            </div>
+            <div class="contactoTel">
+                <p>01 (800) 9520- 873</p>
+            </div>
+        </div>
+
+        <!-- Menu que se visualiza en versión mobile -->
+        <div class="menu_bar">
+            <a href="#" class="bt-menu">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <nav class="contactos">
+            <ul>
+                <li> <a href="tel:018007522303">Ventas 01 800 752 23 03</a></li>
+                <li> <a href="https://api.whatsapp.com/send?phone=573145723198text=Hola!%20Necesito%20información%20sobre%20un%20destino!" target="_blank">Whatsapp 314 572 31 98</a></li>
+                <li><a href="#"><span class="icon-earth"></span>Términos y Condiciones</a></li>
+                <li><a href="#"><span class="icon-earth"></span>Otros</a></li>
+                <li><a href='@Url.Action("Index", "Grupos")'><span class="icon-earth"></span>Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<div class="col-12" style="display:none" id="divResultadosUsers">
+    <div class="text-center pt-4 pb-4"><h4>USUARIOS REGISTRADOS</h4></div>
+    <div class="row">
+        <div class="col-12" style="overflow-x:auto">
+            <table class="table" id="TableUsers">
+                <thead class="thead-light">
+
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

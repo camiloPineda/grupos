@@ -128,22 +128,27 @@ function prueba(valor) {
 
 $(document).ready(function () {
 
+    ObtenerUsuarios();
+
+    $('.mi-selector').select2();
+
     $('#fechaIda1').val(new Date());
 
     $('#fechaRegreso1').val(new Date());
 
-   
+
     $('#btnIdayVuelta').click(function () {
         $('#spinnerVuelos').show();
+        var textOrigen = $("#origen1 option:selected").text();
+        var textDestino = $("#destino1 option:selected").text();
         var metodo = 'IdaRegreso';
         var fechaIda = $('#fechaIda1').val();
         var fechaRegreso = $('#fechaRegreso1').val();
         var origen = $('#origen1').val();
         var destino = $('#destino1').val();
         var cabina = $('#cabina1').val();
-        var adultos = $('#adultos1').val();;
+        var adultos = $('#adultos1').val();
         var ninos = $('#ninos1').val();
-        debugger;
         $.ajax({
             url: 'https://www.grupos.co/gruposPoint/point.php',
             type: 'post',
@@ -156,18 +161,72 @@ $(document).ready(function () {
                 'cabina': cabina,
                 'adultos': adultos,
                 'ninos': ninos
-            },       
+            },
             success: function (respuesta) {
                 $('#spinnerVuelos').hide();
-                debugger;
-                respuesta = respuesta.replace("<br />< b > Deprecated</b >: Methods with the same name as their class will not be constructors in a future version of PHP; connectionServer has a deprecated constructor in <b>C:\\xampp\\htdocs\\gruposPoint\\connection.php</b> on line < b > 20</b > <br />", "");
-                console.log(respuesta)
                 $.ajax({
                     url: '/vuelosyOtros/InterpretarRespuesta',
                     type: 'post',
                     dataType: 'json',
                     crossDomain: true,
                     data: { respuesta },
+                    success: function (rta) {
+                        //debugger;
+                        $('#TableIda > tbody').empty();
+                        $('#TableIda > thead').empty();
+
+                        $('#TableRegreso > tbody').empty();
+                        $('#TableRegreso > thead').empty();
+
+                        var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+                        var diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
+
+                        var d = new Date(fechaIda);
+                        var y = new Date(fechaRegreso);
+
+                        var fechIda = (diasSemana[d.getDay()] + ", " + d.getDate() + " de " + meses[d.getMonth()] + " de " + d.getFullYear());
+                        var fechRegreso = (diasSemana[y.getDay()] + ", " + y.getDate() + " de " + meses[y.getMonth()] + " de " + y.getFullYear());
+
+                        $("#divResultados #TableIda thead").append('<tr><th colspan=4><strong>IDA:  ' + fechIda + '</strong><br/>' + textOrigen + '  -  ' + textDestino + '</th><th class="text-center"><strong>XS</strong></th><th class="text-center"><strong>S</strong></th><th class="text-center"><strong>M</strong></th><th class="text-center"><strong>L</strong></th><th class="text-center"><strong>XXL</strong></th>');
+
+                        var salida = rta[0]["OriginDestinationOptions"]["ListFlightSegment"];
+
+                        for (var i = 0; i < salida.length; i++) {
+                            var resphoraSalida = salida[i].DepartureDateTime;
+                            var resphoraLlegada = salida[i].ArrivalDateTime;
+
+                            var horaSalida = resphoraSalida.substring(11, 19);
+                            var horaLlegada = resphoraLlegada.substring(11, 19);
+
+                            $("#divResultados #TableIda tbody").append('<tr><td>' + horaSalida + '<br/>' + horaLlegada + '<td>' + textOrigen + '<br/>' + textDestino + '</td></td><td>' + salida[i].MarketingAirline + '<br/>' + salida[i].StopQuantity + '  ' + 'Paradas</td><td><a href="#">Ver detalle</a></td><td><input type="radio" name="name" value="" /><p>$163.910</p><p>Ultimas 2 Sillas</p></td><td><input type="radio" name="name" value="" /><p>$207.900</p><p>Ultimas 2 Sillas</p></td><td><input type="radio" name="name" value="" /><p>$244.550</p><p>Ultimas 2 Sillas</p></td><td><input type="radio" name="name" value="" /><p>$299.570</p><p>Ultimas 2 Sillas</p></td><td><input type="radio" name="name" value="" /><p>$945.740</p><p>Ultimas 2 Sillas</p></td>');
+
+                        }
+
+                        $("#divResultados #TableRegreso thead").append('<tr><th colspan=4><strong>REGRESO:  ' + fechRegreso + '</strong><br/>' + textDestino + '  -  ' + textOrigen + '</th><th class="text-center"><strong>XS</strong></th><th class="text-center"><strong>S</strong></th><th class="text-center"><strong>M</strong></th><th class="text-center"><strong>L</strong></th><th class="text-center"><strong>XXL</strong></th>');
+
+                        var salida = rta[1]["OriginDestinationOptions"]["ListFlightSegment"];
+
+                        for (var i = 0; i < salida.length; i++) {
+                            var resphoraSalida = salida[i].DepartureDateTime;
+                            var resphoraLlegada = salida[i].ArrivalDateTime;
+
+                            var horaSalida = resphoraSalida.substring(11, 19);
+                            var horaLlegada = resphoraLlegada.substring(11, 19);
+
+                            $("#divResultados #TableRegreso tbody").append('<tr><td>' + horaSalida + '<br/>' + horaLlegada + '<td>' + textDestino + '<br/>' + textOrigen + '</td></td><td>' + salida[i].MarketingAirline + '<br/>' + salida[i].StopQuantity + '  ' + 'Paradas</td><td><a href="#">Ver detalle</a></td><td><input type="radio" name="name" value="" /><p>$170.510</p><p>+ 9 Sillas</p></td><td><input type="radio" name="name" value="" /><p>$181.530</p><p>+ 9 Sillas</p></td><td><input type="radio" name="name" value="" /><p>$207.990</p><p>+ 9 Sillas</p></td><td><input type="radio" name="name" value="" /><p>$306.170</p><p>+ 9 Sillas</p></td><td><input type="radio" name="name" value="" /><p>$952.340</p><p>Ultimas 2 Sillas</p></td>');
+
+                        }
+
+                        $('#divResultados').css("display", "block");
+                    },
+                    error: function (data) {
+                        debugger;
+                        alert('error' + data);
+                    },
+                    failure: function (r) {
+                        debugger;
+                        alert('fallo' + r);
+                    }
                 });
             },
             error: function (data) {
@@ -195,7 +254,7 @@ $(document).ready(function () {
         $('#Multidestino').prop("checked", false);
         $('#FormIdayVuelta').css("display", "block");
         $('#FormSencillo').css("display", "none");
-        $('#FormMultidestino').css("display", "none");        
+        $('#FormMultidestino').css("display", "none");
     });
 
     $('#Sencillo').click(function () {
@@ -215,6 +274,7 @@ $(document).ready(function () {
         $('#FormSencillo').css("display", "none");
         $('#FormMultidestino').css("display", "block");
     });
+
     function ObtenerCiudades() {
         $('#spinner').show();
         $.ajax({
@@ -222,7 +282,7 @@ $(document).ready(function () {
             type: 'get',
             dataType: 'json',
             crossDomain: true,
-            success: function (ciudades) {    
+            success: function (ciudades) {
                 $('#spinner').hide();
                 // VACIAMOS EL DropDownList
                 $("#origen1").empty();
@@ -250,6 +310,46 @@ $(document).ready(function () {
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert('Ocurrió un error cargando las ciudades.');
+                $('#spinner').hide();
+            }
+        });
+    }
+
+    function ObtenerUsuarios() {
+        //$('#spinner').show();
+        $.ajax({
+            url: '/Usuarios/ListadoUsuarios',
+            type: 'get',
+            dataType: 'json',
+            crossDomain: true,
+            success: function (usuarios) {
+                var resultado = usuarios;
+                $("#divResultadosUsers #TableUsers thead").append('<tr><th>Nombres</th><th>Tipo Documento</th><th>Tipo de Contacto</th><th>Ciudad</th><th>Email</th><th>Celular</th><th>User Name</th><th>Nombre Agencia</th><th>Estado</th><th><i class="fas fa-sync"></i></th>');
+                for (var i = 0; i < resultado.length; i++) {
+                    var Nombre = resultado[i].contactName;
+                    var Tipo_Documento = resultado[i].documentType;
+                    var Tipo_Contacto = resultado[i].contactType;
+                    var Ciudad = resultado[i].cityName;
+                    var email = resultado[i].emailAddress;
+                    var celular = resultado[i].phoneNumber;
+                    var userName = resultado[i].userName;
+                    var nombreAgencia = resultado[i].agencyName;
+                    var estado = false;
+                    var estadoText = "";
+                    estado = resultado[i].status;
+                    if (estado) {
+                        estadoText = "Activo";
+                    } else {
+                        estadoText = "Inactivo";
+                    }
+
+                    $("#divResultadosUsers #TableUsers tbody").append('<tr><td>' + Nombre + '</td><td>' + Tipo_Documento + '</td><td>' + Tipo_Contacto + '</td><td>' + Ciudad + '</td><td>' + email + '</td><td>' + celular + '</td><td>' + userName + '</td><td>' + nombreAgencia + '</td><td>' + estadoText + '</td><td><i class="activar fa fa-check-circle"></i><i class="inactivar fa fa-times-circle"></i></td>');
+                }
+
+                $('#divResultadosUsers').css("display", "block");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Ocurrió un error cargando los usuarios.');
                 $('#spinner').hide();
             }
         });
@@ -939,7 +1039,7 @@ $(document).ready(function () {
         }
     };
 
-     $('#password').keypress(function (event) {
+    $('#password').keypress(function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             Login();
@@ -1107,7 +1207,7 @@ $(document).ready(function () {
     });
 
     $('#btnLogin').click(function () {
-        Login(); 
+        Login();
     });
 
     function isValidEmailAddress(emailAddress) {

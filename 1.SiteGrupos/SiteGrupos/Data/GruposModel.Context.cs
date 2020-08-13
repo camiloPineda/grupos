@@ -25,7 +25,7 @@ namespace SiteGrupos.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Agency> Agency { get; set; }
         public virtual DbSet<Cities> Cities { get; set; }
+        public virtual DbSet<Agency> Agency { get; set; }
     }
 }
